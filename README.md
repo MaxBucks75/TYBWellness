@@ -34,3 +34,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Notes
+Next.js - is being used to create the web app, react framework
+React - JavaScript library for designing UIs, solely view layer, routing and state management done by other tools.
+
+### Tools to Consider
+Typescript - from my understanding more like a traditional coding language than JS. Great for larger projects
+Tailwind CSS - CSS framework with some cool ffects.
+ESLint - code analysis software for JS
+App Router - The App Router is a file-system based router that uses React's latest features such as Server Components, Suspense, and Server Functions.
+Turbopack - Combines source files and dependencies into a single optimized file.

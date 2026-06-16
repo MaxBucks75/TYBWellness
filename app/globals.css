@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Colors */
+  --color-cream: #ebdec4;
+  --color-cream-light: #f7f3ec;
+  --color-forest-green: #4a6741;
+  --color-sage-green: #8fa882;
+  --color-deep-green: #2c3e2d;
+  --color-warm-brown: #6b5c45;
+  --color-warm-brown-light: #9c8b74;
+
+  /* Fonts */
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-cream-light);
+    color: var(--color-deep-green);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .section-padding {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
+  }
+
+  .container-narrow {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container-wide {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
