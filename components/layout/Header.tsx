@@ -54,7 +54,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo / Brand */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-cream flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 rounded-full bg-cream flex items-center justify-center shrink-0">
               <Brain className="w-5 h-5 text-deep-green" />
             </div>
             <div className="leading-tight">
@@ -94,7 +94,7 @@ export default function Header() {
                         : "opacity-0 -translate-y-1 pointer-events-none",
                     )}
                   >
-                    <div className="bg-cream rounded-lg shadow-xl overflow-hidden min-w-[200px]">
+                    <div className="bg-cream rounded-lg shadow-xl overflow-hidden min-w-50">
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
@@ -173,7 +173,7 @@ export default function Header() {
       <div
         className={cn(
           "lg:hidden bg-deep-green border-t border-sage-green/20 overflow-hidden transition-all duration-300",
-          mobileOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0",
+          mobileOpen ? "max-h-150 opacity-100" : "max-h-0 opacity-0",
         )}
       >
         <div className="px-6 py-4 flex flex-col gap-1">
