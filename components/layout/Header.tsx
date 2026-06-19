@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { SignInButton, UserButton, Show } from "@clerk/nextjs";
-import { Menu, X, Brain } from "lucide-react";
+// ── AUTH (Clerk) — disabled for now, uncomment to re-enable ──
+// import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Image from "next/image"
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -37,7 +38,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
   }, [pathname]);
@@ -48,14 +48,20 @@ export default function Header() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
           ? "bg-deep-green/95 backdrop-blur-sm shadow-md"
-          : "bg-deep-green",
+          : "bg-deep-green"
       )}
     >
       <div className="container-wide px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo / Brand */}
           <Link href="/" className="flex items-center gap-3 group">
-            <Image src="/logo.svg" alt="Train Your Brain Wellness" width={40} height={40} />
+            <Image
+              src="/logo.svg"
+              alt="Train Your Brain Wellness"
+              width={44}
+              height={44}
+              className="flex-shrink-0"
+            />
             <div className="leading-tight">
               <p className="font-display text-cream text-lg font-semibold tracking-wide">
                 Train Your Brain
@@ -79,21 +85,20 @@ export default function Header() {
                   <button
                     className={cn(
                       "px-4 py-2 font-body text-sm text-cream/80 hover:text-cream transition-colors rounded-md",
-                      pathname.startsWith("/services") && "text-cream",
+                      pathname.startsWith("/services") && "text-cream"
                     )}
                   >
                     {link.label}
                   </button>
-                  {/* Dropdown */}
                   <div
                     className={cn(
                       "absolute top-full left-0 pt-2 transition-all duration-200",
                       servicesOpen
                         ? "opacity-100 translate-y-0 pointer-events-auto"
-                        : "opacity-0 -translate-y-1 pointer-events-none",
+                        : "opacity-0 -translate-y-1 pointer-events-none"
                     )}
                   >
-                    <div className="bg-cream rounded-lg shadow-xl overflow-hidden min-w-50">
+                    <div className="bg-cream rounded-lg shadow-xl overflow-hidden min-w-[200px]">
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
@@ -112,37 +117,32 @@ export default function Header() {
                   href={link.href}
                   className={cn(
                     "px-4 py-2 font-body text-sm text-cream/80 hover:text-cream transition-colors rounded-md",
-                    pathname === link.href && "text-cream",
+                    pathname === link.href && "text-cream"
                   )}
                 >
                   {link.label}
                 </Link>
-              ),
+              )
             )}
           </nav>
 
-          {/* Right side: auth + CTA */}
+          {/* Right side: auth (disabled) + CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <Show when="signed-out">
+            {/* ── AUTH (Clerk) — disabled for now ──
+            <SignedOut>
               <SignInButton mode="modal">
-                <button className="...">Sign In</button>
+                <button className="font-body text-sm text-cream/70 hover:text-cream transition-colors px-3 py-2">
+                  Sign In
+                </button>
               </SignInButton>
-            </Show>
-            <Show when="signed-in">
-              <Link
-                href="/account"
-                className="font-body text-sm text-cream/70 hover:text-cream transition-colors px-3 py-2"
-              >
+            </SignedOut>
+            <SignedIn>
+              <Link href="/account" className="font-body text-sm text-cream/70 hover:text-cream transition-colors px-3 py-2">
                 My Account
               </Link>
-              <UserButton
-                appearance={{
-                  elements: {
-                    avatarBox: "w-8 h-8",
-                  },
-                }}
-              />
-            </Show>
+              <UserButton appearance={{ elements: { avatarBox: "w-8 h-8" } }} />
+            </SignedIn>
+            */}
             <a
               href={process.env.NEXT_PUBLIC_SIMPLE_PRACTICE_URL || "#"}
               target="_blank"
@@ -159,11 +159,7 @@ export default function Header() {
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
           >
-            {mobileOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
@@ -172,7 +168,7 @@ export default function Header() {
       <div
         className={cn(
           "lg:hidden bg-deep-green border-t border-sage-green/20 overflow-hidden transition-all duration-300",
-          mobileOpen ? "max-h-150 opacity-100" : "max-h-0 opacity-0",
+          mobileOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <div className="px-6 py-4 flex flex-col gap-1">
@@ -204,17 +200,20 @@ export default function Header() {
             </div>
           ))}
           <div className="pt-4 border-t border-sage-green/20 flex flex-col gap-3">
-            <Show when="signed-out">
+            {/* ── AUTH (Clerk) — disabled for now ──
+            <SignedOut>
               <SignInButton mode="modal">
-                <button className="...">Sign In</button>
+                <button className="text-left px-3 py-2 font-body text-sm text-cream/70">
+                  Sign In
+                </button>
               </SignInButton>
-            </Show>
-            <Show when="signed-in">
-              <Link href="/account" className="...">
+            </SignedOut>
+            <SignedIn>
+              <Link href="/account" className="px-3 py-2 font-body text-sm text-cream/70">
                 My Account
               </Link>
-              <UserButton />
-            </Show>
+            </SignedIn>
+            */}
             <a
               href={process.env.NEXT_PUBLIC_SIMPLE_PRACTICE_URL || "#"}
               target="_blank"
