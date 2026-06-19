@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { SignInButton, UserButton, Show } from "@clerk/nextjs";
 import { Menu, X, Brain } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image"
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -54,9 +55,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo / Brand */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-cream flex items-center justify-center shrink-0">
-              <Brain className="w-5 h-5 text-deep-green" />
-            </div>
+            <Image src="/logo.svg" alt="Train Your Brain Wellness" width={40} height={40} />
             <div className="leading-tight">
               <p className="font-display text-cream text-lg font-semibold tracking-wide">
                 Train Your Brain
