@@ -44,5 +44,5 @@ next-env.d.ts
 /.clerk/
 
 # products util with Stripe
-lib/products.ts
-tybwellness\lib\products.ts
+/lib/products.ts
+/app/store
