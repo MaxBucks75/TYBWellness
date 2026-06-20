@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, MessageCircle, Calendar, FileText, Heart } from "lucide-react";
+import ContactForm from "@/components/contact-form/ContactForm";
 
 export const metadata: Metadata = {
   title: "Getting Started",
@@ -151,23 +152,23 @@ export default function GettingStartedPage() {
               </div>
             ))}
           </div>
-          <div className="mt-12 bg-cream-light rounded-2xl p-8 border border-sage-green/20">
-            <p className="font-display text-xl text-deep-green mb-2">
-              Still have questions?
-            </p>
-            <p className="font-body text-warm-brown text-sm mb-4">
-              Reach out directly — we&rsquo;re happy to help you figure out if
-              we&rsquo;re the right fit before you commit to anything.
-            </p>
-            <a
-              href="mailto:contact@trainyourbrainwellness.com"
-              className="inline-flex items-center gap-2 text-forest-green font-body text-sm font-medium hover:gap-3 transition-all"
-            >
-              Send us a message <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
         </div>
       </section>
+
+      {/*CONTACT US*/}
+      <section>
+        <div className="container-narrow px-6 md:px-12">
+          <h2 className="font-display text-4xl text-deep-green mb-10">
+            Contact Us
+          </h2>
+          <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-4">
+            Send us a short message with any questions you may have
+          </p>
+          <ContactForm />
+        </div>
+      </section>
+
     </>
+
   );
 }

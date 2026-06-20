@@ -1,7 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Brain, Phone, Mail, MapPin } from "lucide-react";
-
-//TODO: Add social media links Instagram, Facebook, Linkedin etc.
 
 export default function Footer() {
   return (
@@ -11,9 +10,13 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-cream flex items-center justify-center flex-shrink-0">
-                <Brain className="w-5 h-5 text-deep-green" />
-              </div>
+              <Image
+                src="/logo.svg"
+                alt="Train Your Brain Wellness"
+                width={40}
+                height={40}
+                className="flex-shrink-0"
+              />
               <div className="leading-tight">
                 <p className="font-display text-cream text-base font-semibold">
                   Train Your Brain
@@ -27,29 +30,32 @@ export default function Footer() {
               &ldquo;From survival to healing. Where your mental health is my priority.&rdquo;
             </p>
             {/* Social links */}
-            {/* <div className="flex gap-3 mt-6">
+            <div className="flex gap-3 mt-6">
               <a
                 href="#"
                 aria-label="Instagram"
                 className="w-9 h-9 rounded-full border border-sage-green/30 flex items-center justify-center text-cream/60 hover:text-cream hover:border-sage-green transition-colors"
               >
-                <Instagram className="w-4 h-4" />
+                {/*Update with IG*/}
+                <Brain className="w-4 h-4" />
               </a>
               <a
                 href="#"
                 aria-label="Facebook"
                 className="w-9 h-9 rounded-full border border-sage-green/30 flex items-center justify-center text-cream/60 hover:text-cream hover:border-sage-green transition-colors"
               >
-                <Facebook className="w-4 h-4" />
+                {/*Update with Facebook*/}
+                <Brain className="w-4 h-4" />
               </a>
               <a
                 href="#"
                 aria-label="LinkedIn"
                 className="w-9 h-9 rounded-full border border-sage-green/30 flex items-center justify-center text-cream/60 hover:text-cream hover:border-sage-green transition-colors"
               >
-                <Linkedin className="w-4 h-4" />
+                {/*Update with Linkedin*/}
+                <Brain className="w-4 h-4" /> 
               </a>
-            </div> */}
+            </div>
           </div>
 
           {/* Navigation */}
@@ -88,6 +94,7 @@ export default function Footer() {
                 { label: "Psychotherapy", href: "/services/psychotherapy" },
                 { label: "Medication Management", href: "/services/med-management" },
                 { label: "eTMS Sessions", href: "/services/etms" },
+                { label: "First Responder Package", href: "/services/first-responder-package" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -143,26 +150,27 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-sage-green mt-0.5 flex-shrink-0" />
                 <a
-                  href="tel:+10000000000"
+                  href="tel:+14402926231"
                   className="font-body text-sm text-cream/70 hover:text-cream transition-colors"
                 >
-                  (000) 000-0000
+                  (440) 292-6231
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-sage-green mt-0.5 flex-shrink-0" />
                 <a
-                  href="mailto:contact@trainyourbrainwellness.com"
+                  href="mailto:tybwellness@outlook.com"
                   className="font-body text-sm text-cream/70 hover:text-cream transition-colors"
                 >
-                  contact@trainyourbrainwellness.com
+                  
+                  tybwellness@outlook.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-sage-green mt-0.5 flex-shrink-0" />
                 <span className="font-body text-sm text-cream/70">
-                  Address Line 1<br />
-                  City, State ZIP
+                  3201 East Royalton Rd.<br />
+                  Broadview Heights, Ohio 44147
                 </span>
               </li>
             </ul>

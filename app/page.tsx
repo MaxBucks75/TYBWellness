@@ -1,8 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Heart, Brain, Zap, ShieldCheck, Star } from "lucide-react";
 
-
-// List of services
 const services = [
   {
     icon: Heart,
@@ -30,8 +29,6 @@ const services = [
   },
 ];
 
-
-// List of core values
 const values = [
   {
     label: "Safety First",
@@ -55,17 +52,20 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center bg-deep-green overflow-hidden pt-20">
-        {/* Organic background texture */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `radial-gradient(ellipse at 20% 50%, #8fa882 0%, transparent 60%),
-                              radial-gradient(ellipse at 80% 20%, #ebdec4 0%, transparent 50%)`,
-          }}
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+        {/* Background photo */}
+        <Image
+          src="/hero.jpg"
+          alt="Dr. Amber Bucks"
+          fill
+          priority
+          className="object-cover object-center -z-10"
         />
+        {/* Darkening overlay for text legibility */}
+        <div className="absolute inset-0 bg-deep-green/55 -z-10" />
+
         <div className="container-wide px-6 md:px-12 relative z-10">
-          <div className="max-w-3xl">
+          <div className="max-w-2xl">
             <p className="font-body text-sage-green text-sm uppercase tracking-widest mb-6">
               Dr. Amber Bucks, Psychiatrist
             </p>
@@ -77,10 +77,8 @@ export default function HomePage() {
                 to healing.
               </span>
             </h1>
-            <p className="font-body text-cream/70 text-lg md:text-xl mt-8 max-w-xl leading-relaxed">
-              Where your mental health is my priority. Compassionate psychiatric
-              care that meets you exactly where you are — and walks with you
-              toward where you want to be.
+            <p className="font-body text-cream/90 text-lg md:text-xl mt-8 max-w-xl leading-relaxed">
+              Where your mental health is my priority.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-10">
               <a
@@ -94,16 +92,12 @@ export default function HomePage() {
               </a>
               <Link
                 href="/getting-started"
-                className="inline-flex items-center justify-center gap-2 border border-cream/30 hover:border-cream text-cream font-body text-base px-8 py-4 rounded-full transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 border border-cream/40 hover:border-cream text-cream font-body text-base px-8 py-4 rounded-full transition-all duration-200"
               >
                 New Here? Start Here
               </Link>
             </div>
           </div>
-        </div>
-        {/* Decorative organic shape */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-80 h-80 md:w-[500px] md:h-[500px] opacity-5">
-          <div className="w-full h-full rounded-full bg-cream" />
         </div>
       </section>
 
@@ -111,16 +105,14 @@ export default function HomePage() {
       <section className="section-padding bg-cream-light">
         <div className="container-narrow">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* Photo placeholder */}
-            <div className="aspect-[3/4] bg-sage-green/20 rounded-2xl flex items-center justify-center order-2 md:order-1">
-              <div className="text-center">
-                <div className="w-24 h-24 rounded-full bg-sage-green/30 mx-auto mb-3 flex items-center justify-center">
-                  <Brain className="w-10 h-10 text-forest-green" />
-                </div>
-                <p className="font-body text-sm text-warm-brown-light">
-                  Photo of Dr. Bucks
-                </p>
-              </div>
+            {/* Headshot */}
+            <div className="aspect-[3/4] rounded-2xl overflow-hidden order-2 md:order-1 relative">
+              <Image
+                src="/headshot.jpg"
+                alt="Dr. Amber Bucks"
+                fill
+                className="object-cover"
+              />
             </div>
             {/* Text */}
             <div className="order-1 md:order-2">
@@ -131,16 +123,38 @@ export default function HomePage() {
                 Dr. Amber Bucks
               </h2>
               <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
-                My path into psychiatry was shaped by a personal understanding
-                of what it means to struggle — and to find your way through. I
-                believe deeply that healing is possible for everyone, and that
-                the therapeutic relationship is its own form of medicine.
+                I combine evidence-based psychiatric care with a holistic,
+                functional medicine approach — because true healing goes
+                beyond managing symptoms. It means understanding the why
+                behind what you&rsquo;re experiencing and addressing it at the
+                root, not just placing a temporary fix over the surface. If
+                you&rsquo;ve been carrying things quietly&hellip; if
+                you&rsquo;ve been pushing through when no one sees it&hellip;
+                if you&rsquo;re ready for something to change &mdash; even
+                just a little &mdash; I&rsquo;m here to walk that path with
+                you.
               </p>
-              <p className="font-body text-warm-brown text-base leading-relaxed mb-8">
-                At Train Your Brain Wellness, I blend evidence-based psychiatric
-                treatment with a whole-person approach. We explore not just
-                symptoms, but the story behind them — because lasting change
-                requires understanding the whole picture.
+              <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
+                This work is deeply personal to me. After losing someone very
+                close to me to suicide, I made a commitment: no one should
+                feel like they have to struggle in silence. That loss shaped
+                my mission to create a space where people feel seen, heard,
+                and supported &mdash; without judgment and without stigma.
+              </p>
+              <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
+                I have had the privilege of supporting people in some of
+                their most vulnerable moments, including veterans, first
+                responders and their families, healthcare professionals, and
+                individuals navigating crisis, trauma, and major life
+                transitions. These are the people who often carry the
+                most &mdash; and speak about it the least. But you don&rsquo;t
+                have to be in one of these roles to belong here. I provide
+                care for all ages and a wide range of mental health
+                conditions, always with a trauma-informed lens.
+              </p>
+              <p className="font-display italic text-xl text-forest-green leading-relaxed mb-8">
+                Where clinical expertise meets compassion &mdash; and healing
+                goes deeper than symptoms.
               </p>
               <Link
                 href="/getting-started"
@@ -234,62 +248,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── TESTIMONIAL / QUOTE BAND ─────────────────────── */}
+      {/* ── QUOTE BAND ───────────────────────────────────── */}
       <section className="section-padding bg-cream">
         <div className="container-narrow text-center">
           <Star className="w-6 h-6 text-sage-green mx-auto mb-6" />
           <blockquote className="font-display italic text-3xl md:text-4xl text-deep-green leading-relaxed max-w-2xl mx-auto">
-            &ldquo;The right support doesn&rsquo;t just help you cope — it helps
-            you grow into who you were meant to be.&rdquo;
+            &ldquo;Where clinical expertise meets compassion &mdash; and
+            healing goes deeper than symptoms.&rdquo;
           </blockquote>
           <p className="font-body text-sm text-warm-brown-light mt-6">
             — Dr. Amber Bucks
           </p>
-        </div>
-      </section>
-
-      {/* ── WELLNESS SHOP PREVIEW ────────────────────────── */}
-      <section className="section-padding bg-cream-light">
-        <div className="container-narrow">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-4">
-            <div>
-              <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-2">
-                Curated for Your Journey
-              </p>
-              <h2 className="font-display text-4xl text-deep-green">
-                Wellness Shop
-              </h2>
-            </div>
-            <Link
-              href="/store"
-              className="inline-flex items-center gap-2 text-forest-green font-body text-sm font-medium hover:gap-3 transition-all"
-            >
-              Browse All Products <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-          {/* Teaser grid — just 3 items */}
-          <div className="grid sm:grid-cols-3 gap-6">
-            {[
-              { name: "Mood Balancing Formula", price: "$42.00", category: "Supplement" },
-              { name: "Acupressure Mat Set", price: "$75.00", category: "Wellness Tool" },
-              { name: "Serene Lavender Oil", price: "$25.00", category: "Essential Oil" },
-            ].map((item) => (
-              <Link key={item.name} href="/store" className="group">
-                <div className="aspect-square bg-sage-green/10 rounded-xl mb-4 flex items-center justify-center group-hover:bg-sage-green/20 transition-colors">
-                  <div className="w-16 h-16 rounded-full bg-sage-green/20 flex items-center justify-center">
-                    <Heart className="w-7 h-7 text-forest-green" />
-                  </div>
-                </div>
-                <p className="font-body text-xs text-warm-brown-light uppercase tracking-wider mb-1">
-                  {item.category}
-                </p>
-                <p className="font-display text-lg text-deep-green group-hover:text-forest-green transition-colors">
-                  {item.name}
-                </p>
-                <p className="font-body text-sm text-warm-brown mt-1">{item.price}</p>
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 

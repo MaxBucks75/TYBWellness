@@ -18,6 +18,7 @@ const navLinks = [
       { label: "Psychotherapy", href: "/services/psychotherapy" },
       { label: "Medication Management", href: "/services/med-management" },
       { label: "eTMS Sessions", href: "/services/etms" },
+      { label: "First Responder Program", href: "/services/first-responder-package" },
     ],
   },
   { label: "Getting Started", href: "/getting-started" },
