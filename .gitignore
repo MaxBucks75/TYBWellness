@@ -45,4 +45,4 @@ next-env.d.ts
 
 # products util with Stripe
 /lib/products.ts
-/app/store
+/components/store/*.tsx
