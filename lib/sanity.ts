@@ -68,6 +68,8 @@ export type SupplementOfTheMonth = {
   affiliateLink: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   image?: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  affiliateQrCode?: any;
   month: string;
 };
 
@@ -79,6 +81,7 @@ export async function getSupplementOfTheMonth(): Promise<SupplementOfTheMonth | 
       description,
       affiliateLink,
       image,
+      affiliateQrCode,
       month
     }`
   );
