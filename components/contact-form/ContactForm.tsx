@@ -59,7 +59,8 @@ export default function ContactForm() {
       // Mark as sent so the form won't show again on this browser
       window.localStorage.setItem(STORAGE_KEY, "true");
       setSuccess(true);
-    } catch {
+    } catch (err) {
+      console.error("Fetch error:", err);
       setError("Something went wrong. Please check your connection and try again.");
     } finally {
       setSubmitting(false);

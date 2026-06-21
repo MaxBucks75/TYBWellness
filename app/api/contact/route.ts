@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer"
+import { Resend } from "resend";
 
 const MAX_MESSAGE_LENGTH = 500;
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   try {
@@ -27,30 +29,30 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // ── Send via SMTP into Amber's Spruce Health inbox ──────
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: process.env.SMTP_PORT === "465",
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASSWORD,
-      },
-    });
+    // ── Sanity check env vars before calling Resend ─────────
+    if (!process.env.RESEND_API_KEY) {
+      console.error("Missing RESEND_API_KEY in environment");
+      return NextResponse.json(
+        { error: "Server email configuration is missing. Contact the site administrator." },
+        { status: 500 }
+      );
+    }
+    if (!process.env.SPRUCE_HEALTH_EMAIL) {
+      console.error("Missing SPRUCE_HEALTH_EMAIL in environment");
+      return NextResponse.json(
+        { error: "Server email configuration is missing. Contact the site administrator." },
+        { status: 500 }
+      );
+    }
 
-    await transporter.sendMail({
-      from: `"Train Your Brain Wellness Website" <${process.env.SMTP_USER}>`,
-      to: process.env.SPRUCE_HEALTH_EMAIL,
+    // ── Send via Resend into Amber's Spruce Health inbox ───
+    const { data, error } = await resend.emails.send({
+      // TODO: swap to a verified domain sender once set up in Resend
+      // e.g. "Train Your Brain Wellness <contact@trainyourbrainwellness.com>"
+      from: "Train Your Brain Wellness <onboarding@resend.dev>",
+      to: [process.env.SPRUCE_HEALTH_EMAIL],
       replyTo: email,
       subject: `New website message from ${firstName} ${lastName}`,
-      text: [
-        `Name: ${firstName} ${lastName}`,
-        `Email: ${email}`,
-        `Phone: ${phone?.trim() ? phone : "Not provided"}`,
-        "",
-        "Message:",
-        message,
-      ].join("\n"),
       html: `
         <div style="font-family: sans-serif; line-height: 1.6;">
           <p><strong>Name:</strong> ${firstName} ${lastName}</p>
@@ -61,6 +63,16 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     });
+
+    console.log("Resend response:", { data, error });
+
+    if (error) {
+      console.error("Resend error:", JSON.stringify(error, null, 2));
+      return NextResponse.json(
+        { error: "Something went wrong sending your message. Please try again." },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
