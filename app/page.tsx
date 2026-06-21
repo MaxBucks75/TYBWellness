@@ -65,7 +65,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-deep-green/55 -z-10" />
 
         <div className="container-wide px-6 md:px-12 relative z-10">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl md:-ml-20">
             <p className="font-body text-sage-green text-sm uppercase tracking-widest mb-6">
               Dr. Amber Bucks, Psychiatrist
             </p>
@@ -94,7 +94,7 @@ export default function HomePage() {
                 href="/getting-started"
                 className="inline-flex items-center justify-center gap-2 border border-cream/40 hover:border-cream text-cream font-body text-base px-8 py-4 rounded-full transition-all duration-200"
               >
-                New Here? Start Here
+                New? Start Here
               </Link>
             </div>
           </div>
