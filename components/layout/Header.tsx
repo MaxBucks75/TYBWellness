@@ -17,7 +17,7 @@ const navLinks = [
     children: [
       { label: "Psychotherapy", href: "/services/psychotherapy" },
       { label: "Medication Management", href: "/services/med-management" },
-      { label: "eTMS Sessions", href: "/services/etms" },
+      { label: "TMS Sessions", href: "/services/tms" },
       { label: "First Responder Program", href: "/services/first-responder-package" },
     ],
   },
@@ -57,10 +57,10 @@ export default function Header() {
           {/* Logo / Brand */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Train Your Brain Wellness"
-              width={44}
-              height={44}
+              width={80}
+              height={80}
               className="flex-shrink-0"
             />
             <div className="leading-tight">

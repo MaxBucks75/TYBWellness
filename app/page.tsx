@@ -21,10 +21,10 @@ const services = [
   },
   {
     icon: Zap,
-    title: "eTMS Sessions",
+    title: "TMS Sessions",
     description:
       "Transcranial Magnetic Stimulation — a non-invasive, FDA-cleared treatment for depression that stimulates targeted areas of the brain without medication.",
-    href: "/services/etms",
+    href: "/services/tms",
     cta: "Learn More",
   },
 ];
@@ -55,7 +55,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         {/* Background photo */}
         <Image
-          src="/hero.jpg"
+          src="/hero.png"
           alt="Dr. Amber Bucks"
           fill
           priority
@@ -108,7 +108,7 @@ export default function HomePage() {
             {/* Headshot */}
             <div className="aspect-[3/4] rounded-2xl overflow-hidden order-2 md:order-1 relative">
               <Image
-                src="/headshot.jpg"
+                src="/headshot.png"
                 alt="Dr. Amber Bucks"
                 fill
                 className="object-cover"
