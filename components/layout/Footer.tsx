@@ -40,7 +40,7 @@ export default function Footer() {
               {[
                 { label: "Home", href: "/" },
                 { label: "Getting Started", href: "/getting-started" },
-                { label: "Services", href: "/services/psychotherapy" },
+                { label: "Services", href: "/services" },
                 { label: "Wellness Shop", href: "/store" },
                 { label: "Blog", href: "/blog" },
                 { label: "Resources", href: "/resources" },
@@ -66,7 +66,8 @@ export default function Footer() {
               {[
                 { label: "Psychotherapy", href: "/services/psychotherapy" },
                 { label: "Medication Management", href: "/services/med-management" },
-                { label: "eTMS Sessions", href: "/services/etms" },
+                { label: "TMS Sessions", href: "/services/etms" },
+                { label: "First Responder Package", href: "/services/first-responder-package"},
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -122,26 +123,27 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-sage-green mt-0.5 flex-shrink-0" />
                 <a
-                  href="tel:+10000000000"
+                  href="tel:+14402926231"
                   className="font-body text-sm text-cream/70 hover:text-cream transition-colors"
                 >
-                  (000) 000-0000
+                  (440) 292-6231
                 </a>
               </li>
               <li className="flex items-start gap-3">
+                {/* TODO: Replace with real email address! */}
                 <Mail className="w-4 h-4 text-sage-green mt-0.5 flex-shrink-0" />
                 <a
-                  href="mailto:contact@trainyourbrainwellness.com"
+                  href="mailto:tybwellness@outlook.com"
                   className="font-body text-sm text-cream/70 hover:text-cream transition-colors"
                 >
-                  contact@trainyourbrainwellness.com
+                  tybwellness@outlook.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-sage-green mt-0.5 flex-shrink-0" />
                 <span className="font-body text-sm text-cream/70">
-                  Address Line 1<br />
-                  City, State ZIP
+                  3201 East Royalton Rd<br />
+                  Broadview Heights, Ohio 44147
                 </span>
               </li>
             </ul>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -93,18 +94,53 @@ export default function TMSPage() {
             Our TMS Partnership
           </h2>
           <p className="font-body text-cream/70 text-base leading-relaxed mb-6">
-            Dr. Bucks partners with JLC Services to provide TMS and other
-            advanced treatment modalities, including options supported through
-            state funding for eligible first responders.
+            Dr. Bucks partners with JLC Services to provide TMS, including
+            options supported through state funding for eligible first
+            responders, and with D2 Human Performance Centers for
+            complementary nervous-system recovery modalities such as red
+            light therapy, cryotherapy, and Shiftwave pulsed-pressure therapy.
           </p>
-          <a
-            href="https://jlcservicesinc.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sage-green hover:text-cream font-body text-sm font-medium transition-colors"
-          >
-            Learn more about JLC Services <ArrowRight className="w-4 h-4" />
-          </a>
+          <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-6">
+            <div className="flex flex-col gap-2">
+              <a href="https://jlcservicesinc.net/" target="_blank" rel="noopener noreferrer" className="rounded-lg p-3 inline-block">
+                <Image
+                  src="/jlc-logo.png"
+                  alt="JLC Services"
+                  width={95}
+                  height={48}
+                  className="w-40 h-auto"
+                />
+              </a>
+              <a
+                href="https://jlcservicesinc.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sage-green hover:text-cream font-body text-sm font-medium transition-colors"
+              >
+                Learn more about JLC Services <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <a href="https://d2hpcenters.com/" target="_blank" rel="noopener noreferrer" className="rounded-lg p-3 inline-block">
+                <Image
+                  src="/d2-logo.png"
+                  alt="D2 Human Performance Centers"
+                  width={505}
+                  height={95}
+                  className="w-75 h-auto"
+                />
+              </a>
+              <a
+                href="https://d2hpcenters.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sage-green hover:text-cream font-body text-sm font-medium transition-colors"
+              >
+                Learn more about D2 Human Performance Centers <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 

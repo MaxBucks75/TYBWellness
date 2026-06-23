@@ -61,13 +61,24 @@ export default function HomePage() {
           priority
           className="object-cover object-center -z-10"
         />
+
+        {/* Daisy Award */}
+        <div className="absolute bottom-0 left-0 p-6 md:p-10 lg:p-12 z-20">
+          <Image
+            src="/daisy-award.png"
+            alt="Daisy Award"
+            width={140}
+            height={140}
+          />
+        </div>
+
         {/* Darkening overlay for text legibility */}
         <div className="absolute inset-0 bg-deep-green/55 -z-10" />
 
         <div className="container-wide px-6 md:px-12 relative z-10">
           <div className="max-w-2xl md:-ml-20">
             <p className="font-body text-sage-green text-sm uppercase tracking-widest mb-6">
-              Dr. Amber Bucks, Psychiatrist
+              Amber Bucks, MSN, APRN, PMHNP-BC
             </p>
             <h1 className="font-display text-cream leading-[1.1]">
               <span className="block text-5xl md:text-6xl lg:text-7xl font-light">
@@ -117,11 +128,14 @@ export default function HomePage() {
             {/* Text */}
             <div className="order-1 md:order-2">
               <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-4">
-                Meet Your Psychiatrist
+                Meet your Board Certified Psychiatric Mental Health Nurse Practitioner
               </p>
-              <h2 className="font-display text-4xl md:text-5xl text-deep-green leading-tight mb-6">
-                Dr. Amber Bucks
+              <h2 className="font-display text-4xl md:text-5xl text-deep-green leading-tight mb-0">
+                Amber Bucks
               </h2>
+              <h3 className="font-display text-2xl md:text-2xl text-forest-green leading-tight mb-6">
+                (MSN, APRN, PMHNP-BC)
+              </h3>
               <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
                 I combine evidence-based psychiatric care with a holistic,
                 functional medicine approach — because true healing goes
@@ -135,8 +149,8 @@ export default function HomePage() {
                 you.
               </p>
               <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
-                This work is deeply personal to me. After losing someone very
-                close to me to suicide, I made a commitment: no one should
+                This work is deeply personal to me. After losing a close family 
+                member to suicide, I made a commitment: no one should
                 feel like they have to struggle in silence. That loss shaped
                 my mission to create a space where people feel seen, heard,
                 and supported &mdash; without judgment and without stigma.
@@ -167,7 +181,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── SERVICES ─────────────────────────────────────── */}
+      {/* ── SERVICES (teaser) ────────────────────────────── */}
       <section className="section-padding bg-cream">
         <div className="container-narrow">
           <div className="text-center mb-14">
@@ -205,7 +219,7 @@ export default function HomePage() {
               );
             })}
           </div>
-          <div className="text-center mt-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
             <a
               href={process.env.NEXT_PUBLIC_SIMPLE_PRACTICE_URL || "#"}
               target="_blank"
@@ -214,18 +228,68 @@ export default function HomePage() {
             >
               Book an Appointment <ArrowRight className="w-4 h-4" />
             </a>
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 text-forest-green font-body font-medium hover:gap-3 transition-all"
+            >
+              View All Services <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FIRST RESPONDER PROGRAM CALLOUT ──────────────── */}
+      <section className="section-padding bg-deep-green">
+        <div className="container-narrow">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-3">
+                Frontline Mental Wellness Program
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl text-cream leading-tight mb-5">
+                How are you at home
+                <span className="block italic text-sage-green">
+                  when your shift ends?
+                </span>
+              </h2>
+              <p className="font-body text-cream/70 text-base leading-relaxed mb-6">
+                A specialized program for first responders, veterans, and
+                healthcare professionals — built by someone who understands
+                the work behind the symptoms, not just the symptoms
+                themselves.
+              </p>
+              <Link
+                href="/services/first-responder-package"
+                className="inline-flex items-center gap-2 bg-sage-green hover:bg-cream text-deep-green font-body font-medium px-7 py-3.5 rounded-full transition-all duration-200"
+              >
+                Learn About the Program <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <div className="border border-sage-green/20 rounded-2xl p-8">
+              <p className="font-body text-cream/60 text-sm uppercase tracking-wider mb-4">
+                Built for those who carry the most
+              </p>
+              <ul className="flex flex-col gap-3">
+                {["Police, Firefighters, EMS & Dispatchers", "Veterans", "Healthcare Professionals", "Their Families"].map((item) => (
+                  <li key={item} className="font-body text-cream/80 text-base flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-sage-green flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ── OUR VALUES ───────────────────────────────────── */}
-      <section className="section-padding bg-deep-green">
+      <section className="section-padding bg-cream">
         <div className="container-narrow">
           <div className="text-center mb-14">
             <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-3">
               The Foundation
             </p>
-            <h2 className="font-display text-4xl md:text-5xl text-cream">
+            <h2 className="font-display text-4xl md:text-5xl text-deep-green">
               How We Practice
             </h2>
           </div>
@@ -237,9 +301,9 @@ export default function HomePage() {
               >
                 <div className="flex items-center gap-3 mb-3">
                   <ShieldCheck className="w-5 h-5 text-sage-green flex-shrink-0" />
-                  <h4 className="font-display text-xl text-cream">{v.label}</h4>
+                  <h4 className="font-display text-xl text-deep-green">{v.label}</h4>
                 </div>
-                <p className="font-body text-sm text-cream/60 leading-relaxed pl-8">
+                <p className="font-body text-sm text-warm-brown leading-relaxed pl-8">
                   {v.text}
                 </p>
               </div>
@@ -249,7 +313,7 @@ export default function HomePage() {
       </section>
 
       {/* ── QUOTE BAND ───────────────────────────────────── */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-cream-light">
         <div className="container-narrow text-center">
           <Star className="w-6 h-6 text-sage-green mx-auto mb-6" />
           <blockquote className="font-display italic text-3xl md:text-4xl text-deep-green leading-relaxed max-w-2xl mx-auto">
@@ -257,7 +321,7 @@ export default function HomePage() {
             healing goes deeper than symptoms.&rdquo;
           </blockquote>
           <p className="font-body text-sm text-warm-brown-light mt-6">
-            — Dr. Amber Bucks
+            — Amber Bucks, MSN, APRN, PMHNP-BC
           </p>
         </div>
       </section>

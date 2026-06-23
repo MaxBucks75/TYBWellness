@@ -25,6 +25,7 @@ const navLinks = [
   { label: "Wellness Shop", href: "/store" },
   { label: "Blog", href: "/blog" },
   { label: "Resources", href: "/resources" },
+  { label: "Fees & Policies", href: "/fees-policies" },
 ];
 
 export default function Header() {
@@ -83,14 +84,15 @@ export default function Header() {
                   onMouseEnter={() => setServicesOpen(true)}
                   onMouseLeave={() => setServicesOpen(false)}
                 >
-                  <button
+                  <Link
+                    href={link.href}
                     className={cn(
-                      "px-4 py-2 font-body text-sm text-cream/80 hover:text-cream transition-colors rounded-md",
+                      "px-4 py-2 font-body text-sm text-cream/80 hover:text-cream transition-colors rounded-md inline-block",
                       pathname.startsWith("/services") && "text-cream"
                     )}
                   >
                     {link.label}
-                  </button>
+                  </Link>
                   <div
                     className={cn(
                       "absolute top-full left-0 pt-2 transition-all duration-200",
