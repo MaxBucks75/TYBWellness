@@ -17,14 +17,6 @@ export default function Footer() {
                 height={220}
                 className="flex-shrink-0"
               />
-              {/* <div className="leading-tight">
-                <p className="font-display text-cream text-base font-semibold">
-                  Train Your Brain
-                </p>
-                <p className="font-body text-sage-green text-xs tracking-widest uppercase">
-                  Wellness
-                </p>
-              </div> */}
             </Link>
             <p className="font-display italic text-cream/70 text-base leading-relaxed mt-4">
               &ldquo;From survival to healing. Where your mental health is my priority.&rdquo;
@@ -44,6 +36,7 @@ export default function Footer() {
                 { label: "Wellness Shop", href: "/store" },
                 { label: "Blog", href: "/blog" },
                 { label: "Resources", href: "/resources" },
+                { label: "Fees & Policies", href: "/fees-policies" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -64,10 +57,10 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-3">
               {[
-                { label: "Psychotherapy", href: "/services/psychotherapy" },
-                { label: "Medication Management", href: "/services/med-management" },
-                { label: "TMS Sessions", href: "/services/etms" },
-                { label: "First Responder Package", href: "/services/first-responder-package"},
+                { label: "Comprehensive Psychiatric Care", href: "/services/psychiatric-care" },
+                { label: "First Responder & Healthcare Professional Wellness", href: "/services/first-responder-wellness" },
+                { label: "Advanced Treatment & Recovery", href: "/services/advanced-treatment" },
+                { label: "View All Services", href: "/services" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

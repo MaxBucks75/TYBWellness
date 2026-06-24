@@ -1,32 +1,52 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Heart, Brain, Zap, ShieldCheck, Star } from "lucide-react";
+import { ArrowRight, Heart, Shield, Sparkles, ShieldCheck, Star, CheckCircle } from "lucide-react";
 
-const services = [
+const pillars = [
   {
     icon: Heart,
-    title: "Psychotherapy",
+    title: "Comprehensive Psychiatric Care",
     description:
-      "A compassionate space to explore your inner world. Whether you're navigating grief, anxiety, trauma, or life transitions — talk therapy offers a foundation for lasting change.",
-    href: "/services/psychotherapy",
-    cta: "Learn More",
+      "Whole-person evaluations, medication management, deprescribing, GeneSight testing, care coordination, psychotherapy, and crisis support — all under one roof.",
+    href: "/services/psychiatric-care",
   },
   {
-    icon: Brain,
-    title: "Medication Management",
+    icon: Shield,
+    title: "First Responder & Healthcare Professional Wellness",
     description:
-      "Thoughtful, evidence-based psychiatric medication support tailored to your biology, history, and goals. We work together to find what genuinely helps.",
-    href: "/services/med-management",
-    cta: "Learn More",
+      "Specialized, confidential care for police, fire, EMS, dispatchers, veterans, and healthcare workers — and the families who stand beside them.",
+    href: "/services/first-responder-wellness",
   },
   {
-    icon: Zap,
-    title: "TMS Sessions",
+    icon: Sparkles,
+    title: "Advanced Treatment & Recovery Options",
     description:
-      "Transcranial Magnetic Stimulation — a non-invasive, FDA-cleared treatment for depression that stimulates targeted areas of the brain without medication.",
-    href: "/services/tms",
-    cta: "Learn More",
+      "TMS, Spravato, integrative psychiatry, functional mental health, and recovery-focused wellness modalities for when more is needed.",
+    href: "/services/advanced-treatment",
   },
+];
+
+const conditionsTreated = [
+  "PTSD",
+  "Anxiety",
+  "Depression",
+  "OCD",
+  "Eating Disorders, Body Dysmorphia",
+  "ADHD",
+  "Autism",
+  "Insomnia & Sleep Concerns",
+  "Substance Use Disorders",
+  "Stress, Burnout & Compassion Fatigue",
+  "Schizophrenia Spectrum & Psychotic Disorders",
+  "TBI-Related Mental Health Concerns",
+  "Bipolar Disorders",
+];
+
+const populationsServed = [
+  "First Responders and their families — Police, Firefighters, EMS, Dispatchers",
+  "Veterans",
+  "Healthcare Professionals",
+  "Adolescents & Adults",
 ];
 
 const values = [
@@ -181,7 +201,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── SERVICES (teaser) ────────────────────────────── */}
+      {/* ── 3 PILLARS OF SERVICE ─────────────────────────── */}
       <section className="section-padding bg-cream">
         <div className="container-narrow">
           <div className="text-center mb-14">
@@ -189,101 +209,99 @@ export default function HomePage() {
               What We Offer
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-deep-green">
-              Services
+              3 Pillars of Service
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service) => {
-              const Icon = service.icon;
+            {pillars.map((pillar) => {
+              const Icon = pillar.icon;
               return (
                 <div
-                  key={service.title}
-                  className="bg-cream-light rounded-2xl p-8 flex flex-col group hover:shadow-lg transition-shadow duration-300"
+                  key={pillar.title}
+                  className="bg-forest-green rounded-2xl p-8 flex flex-col group hover:shadow-lg hover:bg-deep-green transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-forest-green/10 flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6 text-forest-green" />
+                  <div className="w-12 h-12 rounded-xl bg-cream/10 flex items-center justify-center mb-6">
+                    <Icon className="w-6 h-6 text-sage-green" />
                   </div>
-                  <h3 className="font-display text-2xl text-deep-green mb-3">
-                    {service.title}
+                  <h3 className="font-display text-2xl text-cream mb-3">
+                    {pillar.title}
                   </h3>
-                  <p className="font-body text-sm text-warm-brown leading-relaxed flex-1 mb-6">
-                    {service.description}
+                  <p className="font-body text-sm text-cream/70 leading-relaxed flex-1 mb-6">
+                    {pillar.description}
                   </p>
                   <Link
-                    href={service.href}
-                    className="inline-flex items-center gap-2 text-forest-green font-body text-sm font-medium group-hover:gap-3 transition-all"
+                    href={pillar.href}
+                    className="inline-flex items-center gap-2 text-sage-green font-body text-sm font-medium group-hover:gap-3 transition-all"
                   >
-                    {service.cta} <ArrowRight className="w-3.5 h-3.5" />
+                    Learn More <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               );
             })}
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 bg-deep-green hover:bg-forest-green text-cream font-body font-medium px-8 py-4 rounded-full transition-all duration-200"
+            >
+              View All Services <ArrowRight className="w-4 h-4" />
+            </Link>
             <a
               href={process.env.NEXT_PUBLIC_SIMPLE_PRACTICE_URL || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-forest-green hover:bg-deep-green text-cream font-body font-medium px-8 py-4 rounded-full transition-all duration-200"
+              className="inline-flex items-center gap-2 bg-white hover:bg-cream-light text-forest-green font-body font-medium px-8 py-4 rounded-full transition-all duration-200 border border-sage-green/30"
             >
               Book an Appointment <ArrowRight className="w-4 h-4" />
             </a>
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 text-forest-green font-body font-medium hover:gap-3 transition-all"
-            >
-              View All Services <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* ── FIRST RESPONDER PROGRAM CALLOUT ──────────────── */}
-      <section className="section-padding bg-deep-green">
+      {/* ── CONDITIONS WE TREAT ──────────────────────────── */}
+      <section className="section-padding bg-cream-light">
         <div className="container-narrow">
-          <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-3">
-                Frontline Mental Wellness Program
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl text-cream leading-tight mb-5">
-                How are you at home
-                <span className="block italic text-sage-green">
-                  when your shift ends?
+          <div className="text-center mb-10">
+            <h2 className="font-display text-3xl md:text-4xl text-deep-green">
+              Conditions We Treat
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+            {conditionsTreated.map((condition) => (
+              <div key={condition} className="flex items-start gap-3">
+                <CheckCircle className="w-4 h-4 text-forest-green flex-shrink-0 mt-1" />
+                <span className="font-body text-base text-warm-brown leading-relaxed">
+                  {condition}
                 </span>
-              </h2>
-              <p className="font-body text-cream/70 text-base leading-relaxed mb-6">
-                A specialized program for first responders, veterans, and
-                healthcare professionals — built by someone who understands
-                the work behind the symptoms, not just the symptoms
-                themselves.
-              </p>
-              <Link
-                href="/services/first-responder-package"
-                className="inline-flex items-center gap-2 bg-sage-green hover:bg-cream text-deep-green font-body font-medium px-7 py-3.5 rounded-full transition-all duration-200"
-              >
-                Learn About the Program <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-            <div className="border border-sage-green/20 rounded-2xl p-8">
-              <p className="font-body text-cream/60 text-sm uppercase tracking-wider mb-4">
-                Built for those who carry the most
-              </p>
-              <ul className="flex flex-col gap-3">
-                {["Police, Firefighters, EMS & Dispatchers", "Veterans", "Healthcare Professionals", "Their Families"].map((item) => (
-                  <li key={item} className="font-body text-cream/80 text-base flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-sage-green flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── POPULATIONS WE SERVE ─────────────────────────── */}
+      <section className="section-padding bg-cream">
+        <div className="container-narrow">
+          <div className="text-center mb-10">
+            <h2 className="font-display text-3xl md:text-4xl text-deep-green">
+              Who We Serve
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            {populationsServed.map((pop) => (
+              <div key={pop} className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-forest-green flex-shrink-0 mt-0.5" />
+                <span className="font-body text-base text-warm-brown leading-relaxed">
+                  {pop}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ── OUR VALUES ───────────────────────────────────── */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-cream-light">
         <div className="container-narrow">
           <div className="text-center mb-14">
             <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-3">
@@ -297,13 +315,13 @@ export default function HomePage() {
             {values.map((v) => (
               <div
                 key={v.label}
-                className="border border-sage-green/20 rounded-2xl p-8 hover:border-sage-green/50 transition-colors"
+                className="bg-forest-green rounded-2xl p-8 hover:bg-deep-green transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-3">
                   <ShieldCheck className="w-5 h-5 text-sage-green flex-shrink-0" />
-                  <h4 className="font-display text-xl text-deep-green">{v.label}</h4>
+                  <h4 className="font-display text-xl text-cream">{v.label}</h4>
                 </div>
-                <p className="font-body text-sm text-warm-brown leading-relaxed pl-8">
+                <p className="font-body text-sm text-cream/70 leading-relaxed pl-8">
                   {v.text}
                 </p>
               </div>
@@ -313,7 +331,7 @@ export default function HomePage() {
       </section>
 
       {/* ── QUOTE BAND ───────────────────────────────────── */}
-      <section className="section-padding bg-cream-light">
+      <section className="section-padding bg-cream">
         <div className="container-narrow text-center">
           <Star className="w-6 h-6 text-sage-green mx-auto mb-6" />
           <blockquote className="font-display italic text-3xl md:text-4xl text-deep-green leading-relaxed max-w-2xl mx-auto">

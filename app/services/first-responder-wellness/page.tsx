@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Frontline Mental Wellness Program",
+  title: "First Responder & Healthcare Professional Wellness",
   description:
-    "A specialized mental health program for first responders, veterans, and healthcare professionals at Train Your Brain Wellness.",
+    "A specialized mental health program for first responders, veterans, healthcare professionals, and their families at Train Your Brain Wellness.",
 };
 
 const understandsList = [
@@ -30,48 +30,59 @@ const programIncludes = [
   "Suicide-risk assessment and safety planning",
   "Functional and integrative psychiatric care",
   "Coordination with other providers or peer-support programs when authorized",
-  "Referrals for TMS, eTMS, psychotherapy, and additional wellness or recovery services when clinically appropriate",
+  "Referrals for TMS, psychotherapy, and additional wellness or recovery services when clinically appropriate",
   "Priority access for eligible spouses, partners, and immediate family members",
 ];
 
-export default function FirstResponderPackagePage() {
+export default function FirstResponderWellnessPage() {
   return (
     <>
       {/* Hero */}
-      <section className="pt-36 pb-20 bg-deep-green">
-        <div className="container-narrow px-6 md:px-12 max-w-3xl">
-          <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-4">
-            Frontline Mental Wellness Program
+      <section className="pt-32 pb-12 bg-deep-green">
+        <div className="container-narrow px-6 md:px-12">
+          <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-3">
+            A Pillar of Service
           </p>
-          <h1 className="font-display text-4xl md:text-5xl text-cream font-light leading-tight mb-8">
-            How are you at home
-            <span className="block italic text-sage-green">
-              when your shift ends?
-            </span>
+          <h1 className="font-display text-4xl md:text-5xl text-cream font-light leading-tight">
+            First Responder & Healthcare Professional Wellness
           </h1>
-          <p className="font-body text-cream/80 text-lg leading-relaxed mb-4">
-            You may be able to complete the call, finish the shift, care for
-            the patient, and continue doing what everyone expects of you.
-          </p>
-          <p className="font-body text-cream/80 text-lg leading-relaxed mb-4">
-            But what happens when you go home?
-          </p>
-          <p className="font-body text-cream/80 text-lg leading-relaxed">
-            Are you able to be emotionally present with the people you love?
-            Are you sleeping? Are you increasingly irritable, detached,
-            anxious, exhausted, or unable to shut your mind off? Do you feel
-            as though your family receives whatever is left of you after the
-            job has taken everything else?
-          </p>
-          <p className="font-display italic text-2xl text-sage-green mt-8">
-            The effects of frontline work do not always end when the shift
-            does.
-          </p>
+        </div>
+      </section>
+
+      {/* Emphasis tile — "How are you at home when your shift ends?" */}
+      <section className="py-14 bg-cream-light">
+        <div className="container-narrow px-6 md:px-12">
+          <div className="bg-deep-green rounded-2xl p-8 md:p-12 max-w-3xl">
+            <h2 className="font-display text-3xl md:text-4xl text-cream font-light leading-tight mb-8">
+              How are you at home
+              <span className="block italic text-sage-green">
+                when your shift ends?
+              </span>
+            </h2>
+            <p className="font-body text-cream/80 text-lg leading-relaxed mb-4">
+              You may be able to complete the call, finish the shift, care for
+              the patient, and continue doing what everyone expects of you.
+            </p>
+            <p className="font-body text-cream/80 text-lg leading-relaxed mb-4">
+              But what happens when you go home?
+            </p>
+            <p className="font-body text-cream/80 text-lg leading-relaxed">
+              Are you able to be emotionally present with the people you love?
+              Are you sleeping? Are you increasingly irritable, detached,
+              anxious, exhausted, or unable to shut your mind off? Do you feel
+              as though your family receives whatever is left of you after the
+              job has taken everything else?
+            </p>
+            <p className="font-display italic text-2xl text-sage-green mt-8">
+              The effects of frontline work do not always end when the shift
+              does.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Understanding */}
-      <section className="section-padding bg-cream-light">
+      <section className="section-padding bg-cream">
         <div className="container-narrow px-6 md:px-12 max-w-3xl">
           <h2 className="font-display text-3xl md:text-4xl text-deep-green mb-6">
             Care From Someone Who Understands the Work Behind the Symptoms
@@ -125,7 +136,7 @@ export default function FirstResponderPackagePage() {
       </section>
 
       {/* More than EAP */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-cream-light">
         <div className="container-narrow px-6 md:px-12 max-w-3xl">
           <h2 className="font-display text-3xl md:text-4xl text-deep-green mb-6">
             More Than a Brief Workplace Benefit
