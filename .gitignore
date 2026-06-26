@@ -46,3 +46,6 @@ next-env.d.ts
 # products util with Stripe
 /lib/products.ts
 /components/store/*.tsx
+
+# project context
+PROJECT_CONTEXT.md

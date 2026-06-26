@@ -280,7 +280,7 @@ export default function HomePage() {
       </section>
 
       {/* ── POPULATIONS WE SERVE ─────────────────────────── */}
-      <section className="section-padding bg-cream">
+      <section className="section-padding bg-cream-light">
         <div className="container-narrow">
           <div className="text-center mb-10">
             <h2 className="font-display text-3xl md:text-4xl text-deep-green">

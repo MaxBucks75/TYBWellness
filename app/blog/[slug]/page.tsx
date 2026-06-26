@@ -114,7 +114,7 @@ export default async function BlogPostPage({ params }: Props) {
             {post.title}
           </h1>
           <p className="font-body text-cream/50 text-sm mt-5">
-            By Dr. Amber Bucks
+            By Amber Bucks, MSN, APRN, PMHNP-BC
           </p>
         </div>
       </section>
@@ -149,10 +149,10 @@ export default async function BlogPostPage({ params }: Props) {
               Written by
             </p>
             <p className="font-display text-xl text-deep-green">
-              Dr. Amber Bucks
+              Amber Bucks, MSN, APRN, PMHNP-BC
             </p>
             <p className="font-body text-sm text-warm-brown mt-1">
-              Psychiatrist & Founder, Train Your Brain Wellness
+              Psychiatric Mental Health Nurse Practitioner & Founder, Train Your Brain Wellness
             </p>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Fees, Insurance & Policies",
@@ -56,14 +56,14 @@ export default function FeesPoliciesPage() {
       </section>
 
       {/* Jump nav */}
-      <section className="py-6 bg-cream border-b border-sage-green/20 sticky top-20 z-30">
-        <div className="container-narrow px-6 md:px-12">
-          <div className="flex flex-wrap gap-3">
+      <section className="py-6 bg-deep-green border-y-cream-light sticky top-20 z-30">
+        <div className="px-6 md:px-12">
+          <div className="flex flex-wrap justify-center gap-3">
             {jumpLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="font-body text-xs uppercase tracking-wider text-forest-green hover:text-deep-green border border-sage-green/30 hover:border-sage-green rounded-full px-4 py-2 transition-colors"
+                className="font-body text-xs uppercase tracking-wider  text-cream/70 hover:text-cream-light border border-cream/70 hover:border-cream-light rounded-full px-4 py-2 transition-colors"
               >
                 {link.label}
               </a>
@@ -115,7 +115,7 @@ export default function FeesPoliciesPage() {
       </section>
 
       {/* Administrative Fees */}
-      <section id="admin-fees" className="section-padding bg-cream">
+      <section id="admin-fees" className="section-padding bg-cream-light">
         <div className="container-narrow px-6 md:px-12">
           <h2 className="font-display text-3xl md:text-4xl text-deep-green mb-3">
             Additional Administrative & Documentation Services
@@ -138,7 +138,7 @@ export default function FeesPoliciesPage() {
             forms.
           </p>
 
-          <div className="bg-cream-light rounded-2xl overflow-hidden border border-sage-green/10">
+          <div className="bg-cream rounded-2xl overflow-hidden border border-sage-green/10">
             {adminFees.map((row, i) => (
               <div
                 key={row.service}
@@ -162,42 +162,40 @@ export default function FeesPoliciesPage() {
           <h2 className="font-display text-3xl text-deep-green mb-5">
             No-Show & Cancellation Policy
           </h2>
-          <ul className="flex flex-col gap-2">
-            <li className="font-body text-warm-brown text-base leading-relaxed">
-              1 courtesy no-show allowed annually
-            </li>
-            <li className="font-body text-warm-brown text-base leading-relaxed">
-              $100 fee for each no-show thereafter
-            </li>
-          </ul>
+          <div className="flex flex-col gap-3">
+            {[
+              "1 courtesy no-show allowed annually",
+              "$100 fee for each no-show thereafter",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <CheckCircle className="w-4 h-4 text-forest-green flex-shrink-0 mt-1" />
+                <span className="font-body text-base text-warm-brown leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Communication Policy */}
-      <section id="communication" className="section-padding bg-cream">
+      <section id="communication" className="section-padding bg-cream-light">
         <div className="container-narrow px-6 md:px-12 max-w-3xl">
           <h2 className="font-display text-3xl text-deep-green mb-5">
             Communication Policy
           </h2>
-          <ul className="flex flex-col gap-3 mb-8">
-            <li className="font-body text-warm-brown text-base leading-relaxed">
-              Secure communication is available through Spruce.
-            </li>
-            <li className="font-body text-warm-brown text-base leading-relaxed">
-              Messages are reviewed during normal business hours.
-            </li>
-            <li className="font-body text-warm-brown text-base leading-relaxed">
-              Typical response time is 1–2 business days.
-            </li>
-            <li className="font-body text-warm-brown text-base leading-relaxed">
-              Providers do not communicate with patients through personal
-              phone numbers or social media accounts.
-            </li>
-            <li className="font-body text-warm-brown text-base leading-relaxed">
-              Documentation requests, disability paperwork, and administrative
-              forms may require additional appointments and fees.
-            </li>
-          </ul>
+          <div className="flex flex-col gap-3 mb-8">
+            {[
+              "Secure communication is available through Spruce.",
+              "Messages are reviewed during normal business hours.",
+              "Typical response time is 1–2 business days.",
+              "Providers do not communicate with patients through personal phone numbers or social media accounts.",
+              "Documentation requests, disability paperwork, and administrative forms may require additional appointments and fees.",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <CheckCircle className="w-4 h-4 text-forest-green flex-shrink-0 mt-1" />
+                <span className="font-body text-base text-warm-brown leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
 
           {/* Emergency callout */}
           <div className="bg-warm-brown/10 border border-warm-brown/30 rounded-2xl p-6 flex gap-4">
@@ -223,22 +221,23 @@ export default function FeesPoliciesPage() {
           <h2 className="font-display text-3xl text-deep-green mb-5">
             Medication Refill Policy
           </h2>
-          <ul className="flex flex-col gap-2">
-            <li className="font-body text-warm-brown text-base leading-relaxed">
-              Request refills several business days before running out.
-            </li>
-            <li className="font-body text-warm-brown text-base leading-relaxed">
-              Attend scheduled appointments.
-            </li>
-            <li className="font-body text-warm-brown text-base leading-relaxed">
-              Controlled substances may have additional requirements.
-            </li>
-          </ul>
+          <div className="flex flex-col gap-3">
+            {[
+              "Request refills several business days before running out.",
+              "Attend scheduled appointments.",
+              "Controlled substances may have additional requirements.",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <CheckCircle className="w-4 h-4 text-forest-green flex-shrink-0 mt-1" />
+                <span className="font-body text-base text-warm-brown leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Good Faith Estimate */}
-      <section id="good-faith" className="section-padding bg-cream">
+      <section id="good-faith" className="section-padding bg-cream-light">
         <div className="container-narrow px-6 md:px-12 max-w-3xl">
           <h2 className="font-display text-3xl text-deep-green mb-5">
             Good Faith Estimate Policy

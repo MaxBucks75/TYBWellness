@@ -23,7 +23,7 @@ export const supplementOfTheMonthSchema = defineType({
       title: "Why It's Beneficial",
       type: "text",
       rows: 4,
-      description: "Dr. Bucks' explanation of why she's recommending this supplement.",
+      description: "Amber's explanation of why she's recommending this supplement.",
       validation: (Rule) => Rule.required(),
     }),
     defineField({

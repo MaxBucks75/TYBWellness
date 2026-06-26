@@ -41,7 +41,7 @@ export default async function BlogPage() {
           </h1>
           <p className="font-body text-cream/70 text-lg max-w-xl mt-5 leading-relaxed">
             Reflections on mental health, wellness research, and the journey
-            toward healing — written by Dr. Amber Bucks.
+            toward healing.
           </p>
         </div>
       </section>
@@ -68,7 +68,7 @@ export default async function BlogPage() {
                 <Link
                   key={post._id}
                   href={`/blog/${post.slug.current}`}
-                  className="group bg-cream rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col sm:flex-row"
+                  className="group bg-cream rounded-2xl overflow-hidden border border-sage-green/10 hover:border-sage-green/40 hover:shadow-md transition-all duration-200 flex flex-col sm:flex-row"
                 >
                   {/* Thumbnail */}
                   <div className="sm:w-64 aspect-video sm:aspect-square bg-sage-green/10 group-hover:bg-sage-green/15 transition-colors flex items-center justify-center flex-shrink-0 relative overflow-hidden">

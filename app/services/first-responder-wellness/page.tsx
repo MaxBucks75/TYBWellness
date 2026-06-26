@@ -174,32 +174,34 @@ export default function FirstResponderWellnessPage() {
       </section>
 
       {/* You don't have to wait */}
-      <section className="section-padding bg-deep-green">
-        <div className="container-narrow px-6 md:px-12 max-w-3xl">
-          <h2 className="font-display text-3xl md:text-4xl text-cream mb-8">
-            You Do Not Have to Wait Until You Are in Crisis
-          </h2>
-          <div className="flex flex-col gap-4 font-body text-cream/80 text-base leading-relaxed mb-8">
-            <p>Mental health care is not only for the person who can no longer work.</p>
-            <p>It is also for the firefighter who is becoming increasingly distant at home.</p>
-            <p>The paramedic who cannot stop replaying a call.</p>
-            <p>The dispatcher who continues hearing the voices from the other end of the line.</p>
-            <p>The police officer who is constantly on alert, even while sitting safely at home.</p>
-            <p>The nurse who has lost compassion and feels guilty about it.</p>
-            <p>
-              The healthcare professional who dreads returning to work but
-              does not know who they would be if they left.
+      <section className="section-padding bg-cream-light">
+        <div className="container-narrow px-6 md:px-12">
+          <div className="bg-deep-green rounded-2xl p-8 md:p-12 max-w-3xl">
+            <h2 className="font-display text-3xl md:text-4xl text-cream mb-8">
+              You Do Not Have to Wait Until You Are in Crisis
+            </h2>
+            <div className="flex flex-col gap-4 font-body text-cream/80 text-base leading-relaxed mb-8">
+              <p>Mental health care is not only for the person who can no longer work.</p>
+              <p>It is also for the firefighter who is becoming increasingly distant at home.</p>
+              <p>The paramedic who cannot stop replaying a call.</p>
+              <p>The dispatcher who continues hearing the voices from the other end of the line.</p>
+              <p>The police officer who is constantly on alert, even while sitting safely at home.</p>
+              <p>The nurse who has lost compassion and feels guilty about it.</p>
+              <p>
+                The healthcare professional who dreads returning to work but
+                does not know who they would be if they left.
+              </p>
+              <p>The spouse or partner who sees the changes but does not know how to help.</p>
+            </div>
+            <p className="font-body text-cream/90 text-lg leading-relaxed mb-2">
+              You have spent your career taking care of others. You deserve care
+              from someone who understands that the goal is not simply to help
+              you survive another shift.
             </p>
-            <p>The spouse or partner who sees the changes but does not know how to help.</p>
+            <p className="font-display italic text-2xl text-sage-green mt-6">
+              The goal is to help you return home as yourself.
+            </p>
           </div>
-          <p className="font-body text-cream/90 text-lg leading-relaxed mb-2">
-            You have spent your career taking care of others. You deserve care
-            from someone who understands that the goal is not simply to help
-            you survive another shift.
-          </p>
-          <p className="font-display italic text-2xl text-sage-green mt-6">
-            The goal is to help you return home as yourself.
-          </p>
         </div>
       </section>
 

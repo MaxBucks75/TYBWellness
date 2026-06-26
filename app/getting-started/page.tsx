@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: "What is your cancellation policy?",
-    a: "We ask for at least 24 hours notice for cancellations. Late cancellations or no-shows may be subject to a fee, which is outlined in your intake paperwork.",
+    a: "Each patient receives one courtesy no-show per year. After that, a $100 fee applies to missed appointments. Please see our Fees & Policies page for full details.",
   },
   {
     q: "Is telehealth available?",
@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: "What ages do you treat?",
-    a: "We currently serve adults (18+). Please contact us if you have questions about your specific situation.",
+    a: "We currently serve adolescents and adults. Please contact us if you have questions about your specific situation.",
   },
   {
     q: "What if I'm in crisis?",

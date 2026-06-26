@@ -3,6 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
+const jumpLinks = [
+  { label: "Psychiatric Care", href: "#psychiatric-care" },
+  { label: "First Responder Wellness", href: "#first-responder" },
+  { label: "Advanced Treatment", href: "#advanced-treatment" },
+  { label: "What We Specialize In", href: "#specialize" },
+  { label: "Additional Services", href: "#additional-services" },
+];
+
 export const metadata: Metadata = {
   title: "Services",
   description:
@@ -85,10 +93,10 @@ const specialties = [
   "Anxiety Disorders",
   "Depression & Mood Disorders",
   "OCD",
+  "Eating Disorders & Body Dysmorphia",
   "Autism Spectrum Support",
   "Insomnia & Sleep Concerns",
   "Substance Use Disorders",
-  "Stress & Burnout",
   "Schizophrenia Spectrum & Psychotic Disorders",
   "TBI-Related Mental Health Concerns",
   "Bipolar Disorders",
@@ -98,68 +106,34 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero — deep-green */}
-      <section className="pt-32 pb-0 bg-deep-green">
+      <section className="pt-36 pb-16 bg-deep-green">
         <div className="container-narrow px-6 md:px-12">
           <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-3">
             Everything We Offer
           </p>
-          <h1 className="font-display text-4xl md:text-5xl text-cream font-light leading-tight">
+          <h1 className="font-display text-5xl md:text-6xl text-cream font-light leading-tight">
             Services
           </h1>
-          <p className="font-body text-cream/70 text-base max-w-2xl mt-4 leading-relaxed">
+          <p className="font-body text-cream/70 text-lg max-w-2xl mt-4 leading-relaxed">
             A complete look at every service available at Train Your Brain
             Wellness, organized by our three pillars of care.
           </p>
         </div>
       </section>
 
-      {/* Jump tiles — single cream tile on the deep-green hero's trailing edge */}
-      <section className="py-12 bg-deep-green">
-        <div className="container-narrow px-6 md:px-12">
-          <div className="bg-cream rounded-2xl p-7 md:p-9">
-            <h3 className="font-display text-2xl text-deep-green text-center mb-6">
-              Jump to a Section
-            </h3>
-
-            {/* Top row: 2 main pillar links */}
-            <div className="grid md:grid-cols-2 gap-3 mb-3">
+      {/* Jump nav — sticky, matches Fees & Policies page */}
+      <section className="py-6 bg-deep-green border-y-cream-light sticky top-20 z-30">
+        <div className="px-6 md:px-12">
+          <div className="flex flex-wrap justify-center gap-3">
+            {jumpLinks.map((link) => (
               <a
-                href="#psychiatric-care"
-                className="font-body text-base text-forest-green hover:text-deep-green font-medium transition-colors"
+                key={link.href}
+                href={link.href}
+                className="font-body text-xs uppercase tracking-wider  text-cream/70 hover:text-cream-light border border-cream/70 hover:border-cream-light rounded-full px-4 py-2 transition-colors"
               >
-                Comprehensive Psychiatric Care &rarr;
+                {link.label}
               </a>
-              <a
-                href="#advanced-treatment"
-                className="font-body text-base text-forest-green hover:text-deep-green font-medium transition-colors"
-              >
-                Advanced Treatment & Recovery &rarr;
-              </a>
-            </div>
-
-            {/* Middle row: 2 supporting links */}
-            <div className="grid md:grid-cols-2 gap-3 mb-3">
-              <a
-                href="#specialize"
-                className="font-body text-base text-forest-green hover:text-deep-green font-medium transition-colors"
-              >
-                What We Specialize In &rarr;
-              </a>
-              <a
-                href="#additional-services"
-                className="font-body text-base text-forest-green hover:text-deep-green font-medium transition-colors"
-              >
-                Additional Clinical Services &rarr;
-              </a>
-            </div>
-
-            {/* Bottom row: First Responder, full width */}
-            <a
-              href="#first-responder"
-              className="font-body text-base text-forest-green hover:text-deep-green font-medium transition-colors"
-            >
-              First Responder & Healthcare Professional Wellness &rarr;
-            </a>
+            ))}
           </div>
         </div>
       </section>
