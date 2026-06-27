@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -83,55 +84,70 @@ export default function FirstResponderWellnessPage() {
 
       {/* Understanding */}
       <section className="section-padding bg-cream">
-        <div className="container-narrow px-6 md:px-12 max-w-3xl">
-          <h2 className="font-display text-3xl md:text-4xl text-deep-green mb-6">
-            Care From Someone Who Understands the Work Behind the Symptoms
-          </h2>
-          <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
-            Many first responders and healthcare professionals have shared
-            that one of the greatest barriers to seeking mental health care is
-            feeling misunderstood.
-          </p>
-          <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
-            They may have previously been connected with a general employee
-            assistance program, brief counseling service, or provider who was
-            well-intentioned but unfamiliar with the culture of emergency
-            services and healthcare. When a professional has to spend most of
-            the appointment explaining the job, defending their reactions, or
-            trying to make someone understand why a particular call or
-            patient continues to affect them, it can become difficult to
-            build trust.
-          </p>
-          <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
-            This program is designed to offer something more individualized
-            and clinically comprehensive.
-          </p>
-          <p className="font-body text-warm-brown text-base leading-relaxed mb-10">
-            My background includes years of experience in emergency and
-            trauma nursing, psychiatric emergency care, crisis intervention,
-            acute mental health treatment, and direct work with first
-            responders, Veterans, healthcare professionals, and individuals
-            experiencing some of the most difficult moments of their lives.
-          </p>
-
-          <h3 className="font-display text-2xl text-deep-green mb-6">
-            I understand that frontline professionals may:
-          </h3>
-          <div className="flex flex-col gap-4 mb-10">
-            {understandsList.map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-forest-green flex-shrink-0 mt-0.5" />
-                <span className="font-body text-base text-warm-brown leading-relaxed">
-                  {item}
-                </span>
-              </div>
-            ))}
+        <div className="container-narrow px-6 md:px-12">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            {/* Text */}
+            <div>
+              <h2 className="font-display text-3xl md:text-4xl text-deep-green mb-6">
+                Care From Someone Who Understands the Work Behind the Symptoms
+              </h2>
+              <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
+                Many first responders and healthcare professionals have shared
+                that one of the greatest barriers to seeking mental health care is
+                feeling misunderstood.
+              </p>
+              <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
+                They may have previously been connected with a general employee
+                assistance program, brief counseling service, or provider who was
+                well-intentioned but unfamiliar with the culture of emergency
+                services and healthcare. When a professional has to spend most of
+                the appointment explaining the job, defending their reactions, or
+                trying to make someone understand why a particular call or
+                patient continues to affect them, it can become difficult to
+                build trust.
+              </p>
+              <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
+                This program is designed to offer something more individualized
+                and clinically comprehensive.
+              </p>
+              <p className="font-body text-warm-brown text-base leading-relaxed mb-10">
+                My background includes years of experience in emergency and
+                trauma nursing, psychiatric emergency care, crisis intervention,
+                acute mental health treatment, and direct work with first
+                responders, Veterans, healthcare professionals, and individuals
+                experiencing some of the most difficult moments of their lives.
+              </p>
+            </div>
+            {/* Headshot — sticky so it stays alongside the long text block */}
+            <div className="md:top-28 aspect-3/4 rounded-2xl overflow-hidden relative">
+              <Image
+                src="/headshot-2.PNG"
+                alt="Amber Bucks, MSN, APRN, PMHNP-BC"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
+          <div>
+              <h3 className="font-display text-2xl text-deep-green mb-6">
+                I understand that frontline professionals may:
+              </h3>
+              <div className="flex flex-col gap-4 mb-10">
+                {understandsList.map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-forest-green flex-shrink-0 mt-0.5" />
+                    <span className="font-body text-base text-warm-brown leading-relaxed">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
 
-          <p className="font-display italic text-2xl text-forest-green leading-relaxed">
-            You should not have to translate your profession before you can
-            begin talking about what it is doing to you.
-          </p>
+              <p className="font-display italic text-2xl text-forest-green leading-relaxed">
+                You should not have to translate your profession before you can
+                begin talking about what it is doing to you.
+              </p>
+            </div>
         </div>
       </section>
 

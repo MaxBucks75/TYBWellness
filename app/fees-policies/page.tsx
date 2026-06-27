@@ -56,7 +56,7 @@ export default function FeesPoliciesPage() {
       </section>
 
       {/* Jump nav */}
-      <section className="py-6 bg-deep-green border-y-cream-light sticky top-20 z-30">
+      <section className="py-6 bg-deep-green border-y-cream-light sm:sticky top-20 z-30">
         <div className="px-6 md:px-12">
           <div className="flex flex-wrap justify-center gap-3">
             {jumpLinks.map((link) => (

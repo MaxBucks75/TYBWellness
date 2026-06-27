@@ -8,10 +8,9 @@ export const client = createClient({
   useCdn: true,
 });
 
-const builder = createImageUrlBuilder(client);
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function urlFor(source: any) {
+  const builder = createImageUrlBuilder(client);
   return builder.image(source);
 }
 
@@ -51,7 +50,13 @@ export async function getPost(slug: string): Promise<SanityPost | null> {
       title,
       slug,
       publishedAt,
-      body,
+      body[]{
+        ...,
+        _type == "image" => {
+          ...,
+          asset->
+        }
+      },
       mainImage,
       "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180)
     }`,
@@ -64,7 +69,9 @@ export async function getPost(slug: string): Promise<SanityPost | null> {
 export type SupplementOfTheMonth = {
   _id: string;
   name: string;
-  description: string;
+  // Rich text array (Portable Text) — render with <PortableTextRenderer blocks={description} />
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  description: any[];
   affiliateLink: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   image?: any;
@@ -78,7 +85,13 @@ export async function getSupplementOfTheMonth(): Promise<SupplementOfTheMonth | 
     `*[_type == "supplementOfTheMonth"] | order(_createdAt desc) [0] {
       _id,
       name,
-      description,
+      description[]{
+        ...,
+        _type == "image" => {
+          ...,
+          asset->
+        }
+      },
       affiliateLink,
       image,
       affiliateQrCode,

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ExternalLink, CheckCircle } from "lucide-react";
+import { PortableText } from "@portabletext/react";
 import { getSupplementOfTheMonth, urlFor } from "@/lib/sanity";
 
 export const metadata: Metadata = {
@@ -143,7 +144,7 @@ export default async function StorePage() {
       {/* Supplement of the Month — Sanity-driven */}
       <section className="py-0 bg-cream-light">
         <div className="container-narrow px-6 md:px-12">
-          <h2 className="font-body text-4x1 uppercase tracking-widest text-sage-green mb-4 text-center">
+          <h2 className="font-body text-4xl uppercase tracking-widest text-sage-green mb-4 text-center">
             Featured This Month
           </h2>
 
@@ -173,9 +174,46 @@ export default async function StorePage() {
                 <h3 className="font-display text-3xl text-deep-green mb-4">
                   {supplementOfTheMonth.name}
                 </h3>
-                <p className="font-body text-warm-brown text-sm leading-relaxed mb-6 flex-1">
-                  {supplementOfTheMonth.description}
-                </p>
+                <div className="mb-6 flex-1 flex flex-col gap-3">
+                  <PortableText
+                    value={supplementOfTheMonth.description}
+                    components={{
+                      block: {
+                        normal: ({ children }) => (
+                          <p className="font-body text-warm-brown text-sm leading-relaxed">{children}</p>
+                        ),
+                        h3: ({ children }) => (
+                          <h3 className="font-display text-lg text-deep-green mt-2">{children}</h3>
+                        ),
+                        h4: ({ children }) => (
+                          <h4 className="font-display text-base text-deep-green mt-1">{children}</h4>
+                        ),
+                        blockquote: ({ children }) => (
+                          <blockquote className="font-display italic text-base text-forest-green border-l-2 border-sage-green pl-4">{children}</blockquote>
+                        ),
+                      },
+                      list: {
+                        bullet: ({ children }) => <ul className="flex flex-col gap-2">{children}</ul>,
+                        number: ({ children }) => <ol className="flex flex-col gap-2 list-decimal pl-4">{children}</ol>,
+                      },
+                      listItem: {
+                        bullet: ({ children }) => (
+                          <li className="flex items-start gap-2">
+                            <CheckCircle className="w-4 h-4 text-forest-green flex-shrink-0 mt-0.5" />
+                            <span className="font-body text-sm text-warm-brown leading-relaxed">{children}</span>
+                          </li>
+                        ),
+                        number: ({ children }) => (
+                          <li className="font-body text-sm text-warm-brown leading-relaxed">{children}</li>
+                        ),
+                      },
+                      marks: {
+                        strong: ({ children }) => <strong className="font-semibold text-deep-green">{children}</strong>,
+                        em: ({ children }) => <em className="italic">{children}</em>,
+                      },
+                    }}
+                  />
+                </div>
                 <a
                   href={supplementOfTheMonth.affiliateLink}
                   target="_blank"

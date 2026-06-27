@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { getPost, urlFor } from "@/lib/sanity";
+import PortableTextRenderer from "@/components/sanity/PortableTextRenderer";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -28,50 +29,6 @@ function formatDate(dateString: string) {
     year: "numeric",
     month: "long",
     day: "numeric",
-  });
-}
-
-// Minimal portable text renderer — handles basic Sanity block content
-type Block = {
-  _type: string;
-  _key: string;
-  style?: string;
-  children?: Array<{ text: string }>;
-};
-
-function renderBody(body: Block[]) {
-  return body.map((block) => {
-    if (block._type !== "block") return null;
-    const text = block.children?.map((c) => c.text).join("") ?? "";
-    switch (block.style) {
-      case "h2":
-        return (
-          <h2 key={block._key} className="font-display text-3xl text-deep-green mt-10 mb-4">
-            {text}
-          </h2>
-        );
-      case "h3":
-        return (
-          <h3 key={block._key} className="font-display text-2xl text-deep-green mt-8 mb-3">
-            {text}
-          </h3>
-        );
-      case "blockquote":
-        return (
-          <blockquote
-            key={block._key}
-            className="font-display italic text-xl text-forest-green border-l-2 border-sage-green pl-6 my-8"
-          >
-            {text}
-          </blockquote>
-        );
-      default:
-        return (
-          <p key={block._key} className="font-body text-warm-brown text-base leading-relaxed mb-5">
-            {text}
-          </p>
-        );
-    }
   });
 }
 
@@ -138,7 +95,9 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Post body */}
       <article className="section-padding bg-cream-light">
         <div className="container-narrow px-6 md:px-12 max-w-3xl">
-          {post.body ? renderBody(post.body) : (
+          {post.body ? (
+            <PortableTextRenderer blocks={post.body} />
+          ) : (
             <p className="font-body text-warm-brown text-base leading-relaxed">
               This post has no content yet.
             </p>
@@ -152,7 +111,7 @@ export default async function BlogPostPage({ params }: Props) {
               Amber Bucks, MSN, APRN, PMHNP-BC
             </p>
             <p className="font-body text-sm text-warm-brown mt-1">
-              Psychiatric Mental Health Nurse Practitioner & Founder, Train Your Brain Wellness
+              Train Your Brain Wellness
             </p>
           </div>
         </div>

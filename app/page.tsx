@@ -46,7 +46,8 @@ const populationsServed = [
   "First Responders and their families — Police, Firefighters, EMS, Dispatchers",
   "Veterans",
   "Healthcare Professionals",
-  "Adolescents & Adults",
+  "Any age group",
+  "All others that may need assistance",
 ];
 
 const values = [
@@ -301,7 +302,14 @@ export default function HomePage() {
       </section>
 
       {/* ── OUR VALUES ───────────────────────────────────── */}
-      <section className="section-padding bg-cream-light">
+      <section className="relative section-padding overflow-hidden">
+        <Image
+          src="/cns-background.jpg"
+          alt=""
+          fill
+          className="object-cover object-center -z-10"
+        />
+        <div className="absolute inset-0 bg-cream/85 -z-10" />
         <div className="container-narrow">
           <div className="text-center mb-14">
             <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-3">

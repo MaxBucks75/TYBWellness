@@ -122,7 +122,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Jump nav — sticky, matches Fees & Policies page */}
-      <section className="py-6 bg-deep-green border-y-cream-light sticky top-20 z-30">
+      <section className="py-6 bg-deep-green border-y-cream-light sm:sticky top-20 z-30">
         <div className="px-6 md:px-12">
           <div className="flex flex-wrap justify-center gap-3">
             {jumpLinks.map((link) => (
@@ -305,10 +305,10 @@ export default function ServicesPage() {
       {/* ══════════════════════════════════════════════════
           PILLAR 2: First Responder & Healthcare Wellness — sage-green, dark text
       ══════════════════════════════════════════════════ */}
-      <section id="first-responder" className="py-20 bg-sage-green">
+      <section id="first-responder" className="py-20 bg-forest-green/85">
         <div className="container-narrow px-6 md:px-12">
           <div className="text-center mb-4">
-            <h2 className="font-display text-4xl md:text-5xl text-deep-green">
+            <h2 className="font-display text-4xl md:text-5xl text-cream">
               First Responder & Healthcare Professional Wellness
             </h2>
           </div>
@@ -351,114 +351,131 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <h3 className="font-display text-2xl text-deep-green mb-6">
-              Care From Someone Who Understands the Work Behind the Symptoms
-            </h3>
-            <p className="font-body text-deep-green/80 text-base leading-relaxed mb-5">
-              Many first responders and healthcare professionals have shared
-              that one of the greatest barriers to seeking mental health care
-              is feeling misunderstood.
-            </p>
-            <p className="font-body text-deep-green/80 text-base leading-relaxed mb-5">
-              They may have previously been connected with a general employee
-              assistance program, brief counseling service, or provider who
-              was well-intentioned but unfamiliar with the culture of
-              emergency services and healthcare. When a professional has to
-              spend most of the appointment explaining the job, defending
-              their reactions, or trying to make someone understand why a
-              particular call or patient continues to affect them, it can
-              become difficult to build trust.
-            </p>
-            <p className="font-body text-deep-green/80 text-base leading-relaxed mb-5">
-              This program is designed to offer something more individualized
-              and clinically comprehensive.
-            </p>
-            <p className="font-body text-deep-green/80 text-base leading-relaxed mb-10">
-              My background includes years of experience in emergency and
-              trauma nursing, psychiatric emergency care, crisis intervention,
-              acute mental health treatment, and direct work with first
-              responders, Veterans, healthcare professionals, and individuals
-              experiencing some of the most difficult moments of their lives.
-            </p>
-
-            <h4 className="font-display text-xl text-deep-green mb-6">
-              I understand that frontline professionals may:
-            </h4>
-            <div className="flex flex-col gap-4 mb-10">
-              {understandsList.map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-deep-green flex-shrink-0 mt-0.5" />
-                  <span className="font-body text-base text-deep-green/80 leading-relaxed">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <p className="font-display italic text-2xl text-deep-green leading-relaxed mb-12">
-              You should not have to translate your profession before you can
-              begin talking about what it is doing to you.
-            </p>
-
-            <h3 className="font-display text-2xl text-deep-green mb-6">
-              More Than a Brief Workplace Benefit
-            </h3>
-            <p className="font-body text-deep-green/80 text-base leading-relaxed mb-5">
-              Employee assistance programs can serve an important role by
-              offering an initial point of contact and connecting employees
-              with available resources. However, some first responders and
-              healthcare professionals need more than a limited number of
-              general counseling sessions or a one-time referral.
-            </p>
-            <p className="font-body text-deep-green/80 text-base leading-relaxed mb-8">
-              The Frontline Mental Wellness Program provides access to
-              ongoing, confidential clinical care that may include:
-            </p>
-
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              {programIncludes.map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle className="w-4 h-4 text-deep-green flex-shrink-0 mt-1" />
-                  <span className="font-body text-sm text-deep-green/80 leading-relaxed">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <p className="font-body text-deep-green/70 text-sm leading-relaxed italic mb-12">
-              This program is not intended to replace every EAP, peer-support
-              team, or workplace wellness service. It is designed to provide
-              the specialized clinical care, continuity, and understanding
-              that may be needed when brief support is not enough.
-            </p>
-
-            {/* You Don't Have to Wait — kept dark for emphasis */}
-            <div className="bg-deep-green rounded-2xl p-8 md:p-12">
-              <h3 className="font-display text-2xl md:text-3xl text-cream mb-8">
-                You Do Not Have to Wait Until You Are in Crisis
-              </h3>
-              <div className="flex flex-col gap-4 font-body text-cream/80 text-base leading-relaxed mb-8">
-                <p>Mental health care is not only for the person who can no longer work.</p>
-                <p>It is also for the firefighter who is becoming increasingly distant at home.</p>
-                <p>The paramedic who cannot stop replaying a call.</p>
-                <p>The dispatcher who continues hearing the voices from the other end of the line.</p>
-                <p>The police officer who is constantly on alert, even while sitting safely at home.</p>
-                <p>The nurse who has lost compassion and feels guilty about it.</p>
-                <p>
-                  The healthcare professional who dreads returning to work but
-                  does not know who they would be if they left.
+            <div className="grid md:grid-cols-2 gap-10 items-start">
+              {/* Text */}
+              <div>
+                <h3 className="font-display text-2xl text-cream mb-6">
+                  Care From Someone Who Understands the Work Behind the Symptoms
+                </h3>
+                <p className="font-body text-cream text-base leading-relaxed mb-5">
+                  Many first responders and healthcare professionals have shared
+                  that one of the greatest barriers to seeking mental health care
+                  is feeling misunderstood.
                 </p>
-                <p>The spouse or partner who sees the changes but does not know how to help.</p>
+                <p className="font-body text-cream text-base leading-relaxed mb-5">
+                  They may have previously been connected with a general employee
+                  assistance program, brief counseling service, or provider who
+                  was well-intentioned but unfamiliar with the culture of
+                  emergency services and healthcare. When a professional has to
+                  spend most of the appointment explaining the job, defending
+                  their reactions, or trying to make someone understand why a
+                  particular call or patient continues to affect them, it can
+                  become difficult to build trust.
+                </p>
               </div>
-              <p className="font-body text-cream/90 text-lg leading-relaxed mb-2">
-                You have spent your career taking care of others. You deserve
-                care from someone who understands that the goal is not simply
-                to help you survive another shift.
+              {/* Headshot */}
+              <div className="aspect-3/4 rounded-2xl overflow-hidden relative">
+                <Image
+                  src="/headshot-2.PNG"
+                  alt="Amber Bucks, MSN, APRN, PMHNP-BC"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div className="mb-10 max-md:mt-10">
+              <p className="font-body text-cream text-base leading-relaxed mb-5">
+                This program is designed to offer something more individualized
+                and clinically comprehensive.
               </p>
-              <p className="font-display italic text-2xl text-sage-green mt-6">
-                The goal is to help you return home as yourself.
+              <p className="font-body text-cream text-base leading-relaxed mb-10">
+                My background includes years of experience in emergency and
+                trauma nursing, psychiatric emergency care, crisis intervention,
+                acute mental health treatment, and direct work with first
+                responders, Veterans, healthcare professionals, and individuals
+                experiencing some of the most difficult moments of their lives.
               </p>
+              <p className="font-display italic text-2xl text-cream leading-relaxed">
+                You should not have to translate your profession before you can
+                begin talking about what it is doing to you.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-display text-xl text-cream mb-6">
+                I understand that frontline professionals may:
+              </h4>
+              <div className="flex flex-col gap-4 mb-10">
+                {understandsList.map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-cream flex-shrink-0 mt-0.5" />
+                    <span className="font-body text-base text-cream leading-relaxed">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="font-display text-2xl text-cream mb-6">
+                More Than a Brief Workplace Benefit
+              </h3>
+              <p className="font-body text-cream text-base leading-relaxed mb-5">
+                Employee assistance programs can serve an important role by
+                offering an initial point of contact and connecting employees
+                with available resources. However, some first responders and
+                healthcare professionals need more than a limited number of
+                general counseling sessions or a one-time referral.
+              </p>
+              <p className="font-body text-cream text-base leading-relaxed mb-8">
+                The Frontline Mental Wellness Program provides access to
+                ongoing, confidential clinical care that may include:
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                {programIncludes.map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-cream flex-shrink-0 mt-1" />
+                    <span className="font-body text-sm text-cream/80 leading-relaxed">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <p className="font-body text-cream text-sm leading-relaxed italic mb-12">
+                This program is not intended to replace every EAP, peer-support
+                team, or workplace wellness service. It is designed to provide
+                the specialized clinical care, continuity, and understanding
+                that may be needed when brief support is not enough.
+              </p>
+
+              {/* You Don't Have to Wait — kept dark for emphasis */}
+              <div className="bg-deep-green rounded-2xl p-8 md:p-12">
+                <h3 className="font-display text-2xl md:text-3xl text-cream mb-8">
+                  You Do Not Have to Wait Until You Are in Crisis
+                </h3>
+                <div className="flex flex-col gap-4 font-body text-cream/80 text-base leading-relaxed mb-8">
+                  <p>Mental health care is not only for the person who can no longer work.</p>
+                  <p>It is also for the firefighter who is becoming increasingly distant at home.</p>
+                  <p>The paramedic who cannot stop replaying a call.</p>
+                  <p>The dispatcher who continues hearing the voices from the other end of the line.</p>
+                  <p>The police officer who is constantly on alert, even while sitting safely at home.</p>
+                  <p>The nurse who has lost compassion and feels guilty about it.</p>
+                  <p>
+                    The healthcare professional who dreads returning to work but
+                    does not know who they would be if they left.
+                  </p>
+                  <p>The spouse or partner who sees the changes but does not know how to help.</p>
+                </div>
+                <p className="font-body text-cream/90 text-lg leading-relaxed mb-2">
+                  You have spent your career taking care of others. You deserve
+                  care from someone who understands that the goal is not simply
+                  to help you survive another shift.
+                </p>
+                <p className="font-display italic text-2xl text-sage-green mt-6">
+                  The goal is to help you return home as yourself.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -467,7 +484,7 @@ export default function ServicesPage() {
       {/* ══════════════════════════════════════════════════
           PILLAR 3: Advanced Treatment & Recovery — light green, dark text
       ══════════════════════════════════════════════════ */}
-      <section id="advanced-treatment" className="py-20 bg-sage-green/40">
+      <section id="advanced-treatment" className="py-20 bg-cream">
         <div className="container-narrow px-6 md:px-12">
           <div className="text-center mb-4">
             <h2 className="font-display text-4xl md:text-5xl text-deep-green">
@@ -589,7 +606,7 @@ export default function ServicesPage() {
       {/* ══════════════════════════════════════════════════
           What We Specialize In + Additional Clinical Services — cream
       ══════════════════════════════════════════════════ */}
-      <section id="specialize" className="py-20 bg-cream">
+      <section id="specialize" className="py-20 bg-cream/60">
         <div className="container-narrow px-6 md:px-12">
           <div className="text-center mb-10">
             <h2 className="font-display text-3xl md:text-4xl text-deep-green">
