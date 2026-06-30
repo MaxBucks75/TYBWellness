@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { BookOpen } from "lucide-react";
-import { getPosts } from "@/lib/sanity";
+import { getPosts, type SanityPost } from "@/lib/sanity";
 import BlogList from "@/components/blog/BlogList";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 export default async function BlogPage() {
-  let posts = [];
+  let posts: SanityPost[] = [];
 
   try {
     posts = await getPosts();

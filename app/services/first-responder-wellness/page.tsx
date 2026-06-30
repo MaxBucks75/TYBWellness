@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
@@ -228,16 +229,14 @@ export default function FirstResponderWellnessPage() {
             How are you at home when your shift ends?
           </h2>
           <p className="font-body text-warm-brown text-base max-w-xl mx-auto mb-8 leading-relaxed">
-            Request priority access to the Frontline Mental Wellness Program.
+            Reach out and Amber will follow up with you as soon as possible.
           </p>
-          <a
-            href={process.env.NEXT_PUBLIC_SIMPLE_PRACTICE_URL || "#"}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/getting-started#contact"
             className="inline-flex items-center gap-2 bg-forest-green hover:bg-deep-green text-cream font-body font-medium px-8 py-4 rounded-full transition-all duration-200"
           >
-            Request Frontline Priority Access <ArrowRight className="w-4 h-4" />
-          </a>
+            Get in touch <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
     </>

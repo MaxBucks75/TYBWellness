@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Heart, Shield, Sparkles, ShieldCheck, Star, CheckCircle } from "lucide-react";
+import { ArrowRight, Heart, Shield, BrainCircuit, ShieldCheck, Star, CheckCircle } from "lucide-react";
 
 const pillars = [
   {
@@ -18,7 +18,7 @@ const pillars = [
     href: "/services/first-responder-wellness",
   },
   {
-    icon: Sparkles,
+    icon: BrainCircuit,
     title: "Advanced Treatment & Recovery Options",
     description:
       "TMS, Spravato, integrative psychiatry, functional mental health, and recovery-focused wellness modalities for when more is needed.",
@@ -80,7 +80,7 @@ export default function HomePage() {
           alt="Dr. Amber Bucks"
           fill
           priority
-          className="object-cover object-center -z-10"
+          className="object-cover object-[70%_center] md:object-center -z-10"
         />
 
         {/* Daisy Award */}
@@ -138,7 +138,7 @@ export default function HomePage() {
         <div className="container-narrow">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Headshot */}
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden order-2 md:order-1 relative">
+            <div className="aspect-3/4 rounded-2xl overflow-hidden order-2 md:order-1 relative">
               <Image
                 src="/headshot.png"
                 alt="Dr. Amber Bucks"
@@ -192,10 +192,10 @@ export default function HomePage() {
                 goes deeper than symptoms.
               </p>
               <Link
-                href="/getting-started"
+                href="https://www.psychologytoday.com/profile/1723474"
                 className="inline-flex items-center gap-2 text-forest-green font-body font-medium hover:gap-3 transition-all"
               >
-                Learn how to get started <ArrowRight className="w-4 h-4" />
+                View my Psychology Today profile<ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -260,7 +260,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CONDITIONS WE TREAT ──────────────────────────── */}
-      <section className="section-padding bg-cream-light">
+      <section className="py-20 px-10 bg-cream-light">
         <div className="container-narrow">
           <div className="text-center mb-10">
             <h2 className="font-display text-3xl md:text-4xl text-deep-green">
@@ -270,7 +270,7 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {conditionsTreated.map((condition) => (
               <div key={condition} className="flex items-start gap-3">
-                <CheckCircle className="w-4 h-4 text-forest-green flex-shrink-0 mt-1" />
+                <CheckCircle className="w-4 h-4 text-forest-green shrink-0 mt-1" />
                 <span className="font-body text-base text-warm-brown leading-relaxed">
                   {condition}
                 </span>
@@ -281,7 +281,7 @@ export default function HomePage() {
       </section>
 
       {/* ── POPULATIONS WE SERVE ─────────────────────────── */}
-      <section className="section-padding bg-cream-light">
+      <section className="pb-20 px-10 bg-cream-light">
         <div className="container-narrow">
           <div className="text-center mb-10">
             <h2 className="font-display text-3xl md:text-4xl text-deep-green">
@@ -291,7 +291,7 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {populationsServed.map((pop) => (
               <div key={pop} className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-forest-green flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-5 h-5 text-forest-green shrink-0 mt-0.5" />
                 <span className="font-body text-base text-warm-brown leading-relaxed">
                   {pop}
                 </span>
@@ -326,7 +326,7 @@ export default function HomePage() {
                 className="bg-forest-green rounded-2xl p-8 hover:bg-deep-green transition-all duration-300"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <ShieldCheck className="w-5 h-5 text-sage-green flex-shrink-0" />
+                  <ShieldCheck className="w-5 h-5 text-sage-green shrink-0" />
                   <h4 className="font-display text-xl text-cream">{v.label}</h4>
                 </div>
                 <p className="font-body text-sm text-cream/70 leading-relaxed pl-8">
@@ -343,8 +343,8 @@ export default function HomePage() {
         <div className="container-narrow text-center">
           <Star className="w-6 h-6 text-sage-green mx-auto mb-6" />
           <blockquote className="font-display italic text-3xl md:text-4xl text-deep-green leading-relaxed max-w-2xl mx-auto">
-            &ldquo;Where clinical expertise meets compassion &mdash; and
-            healing goes deeper than symptoms.&rdquo;
+            &ldquo;The world has enough people surviving.<br>
+            </br>My mission is to help people start living again&rdquo;
           </blockquote>
           <p className="font-body text-sm text-warm-brown-light mt-6">
             — Amber Bucks, MSN, APRN, PMHNP-BC

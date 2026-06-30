@@ -156,7 +156,7 @@ export default function GettingStartedPage() {
       </section>
 
       {/*CONTACT US*/}
-      <section className="section-padding bg-cream-light">
+      <section id="contact" className="section-padding bg-cream-light">
         <div className="container-narrow px-6 md:px-12">
           <h2 className="font-display text-4xl text-deep-green mb-10">
             Contact Us

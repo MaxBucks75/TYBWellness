@@ -15,7 +15,7 @@ export default function Footer() {
                 alt="Train Your Brain Wellness"
                 width={220}
                 height={220}
-                className="flex-shrink-0"
+                className="shrink-0"
               />
             </Link>
             <p className="font-display italic text-cream/70 text-base leading-relaxed mt-4">
@@ -114,7 +114,7 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-sage-green mt-0.5 flex-shrink-0" />
+                <Phone className="w-4 h-4 text-sage-green mt-0.5 shrink-0" />
                 <a
                   href="tel:+14402926231"
                   className="font-body text-sm text-cream/70 hover:text-cream transition-colors"
@@ -124,7 +124,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 {/* TODO: Replace with real email address! */}
-                <Mail className="w-4 h-4 text-sage-green mt-0.5 flex-shrink-0" />
+                <Mail className="w-4 h-4 text-sage-green mt-0.5 shrink-0" />
                 <a
                   href="mailto:tybwellness@outlook.com"
                   className="font-body text-sm text-cream/70 hover:text-cream transition-colors"
@@ -133,7 +133,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-sage-green mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-sage-green mt-0.5 shrink-0" />
                 <span className="font-body text-sm text-cream/70">
                   3201 East Royalton Rd<br />
                   Broadview Heights, Ohio 44147

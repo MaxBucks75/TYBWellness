@@ -476,6 +476,14 @@ export default function ServicesPage() {
                   The goal is to help you return home as yourself.
                 </p>
               </div>
+              <div className="mt-10 text-center">
+                <Link
+                  href="/getting-started#contact"
+                  className="inline-flex items-center gap-2 bg-cream hover:bg-cream-light text-deep-green font-body font-medium px-8 py-4 rounded-full transition-all duration-200"
+                >
+                  Get in touch <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
