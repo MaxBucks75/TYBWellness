@@ -16,6 +16,12 @@ export function urlFor(source: any) {
 
 // ── Blog Posts ──────────────────────────────────────────────
 
+export type BibliographyEntry = {
+  _key: string;
+  citation: string;
+  url?: string;
+};
+
 export type SanityPost = {
   _id: string;
   title: string;
@@ -27,6 +33,7 @@ export type SanityPost = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   body?: any;
   estimatedReadingTime?: number;
+  bibliography?: BibliographyEntry[];
 };
 
 export async function getPosts(): Promise<SanityPost[]> {
@@ -58,9 +65,39 @@ export async function getPost(slug: string): Promise<SanityPost | null> {
         }
       },
       mainImage,
+      bibliography[]{
+        _key,
+        citation,
+        url
+      },
       "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180)
     }`,
     { slug }
+  );
+}
+
+// ── Testimonials ────────────────────────────────────────────
+
+export type Testimonial = {
+  _id: string;
+  quote: string;
+  initials: string;
+  role?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  photo?: any;
+  order?: number;
+};
+
+export async function getTestimonials(): Promise<Testimonial[]> {
+  return client.fetch(
+    `*[_type == "testimonial"] | order(order asc, _createdAt asc) {
+      _id,
+      quote,
+      initials,
+      role,
+      photo,
+      order
+    }`
   );
 }
 

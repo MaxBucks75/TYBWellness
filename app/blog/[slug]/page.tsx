@@ -103,6 +103,37 @@ export default async function BlogPostPage({ params }: Props) {
             </p>
           )}
 
+          {post.bibliography && post.bibliography.length > 0 && (
+            <div className="mt-16 pt-10 border-t border-sage-green/20">
+              <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-4">
+                References
+              </p>
+              <ol className="flex flex-col gap-3">
+                {post.bibliography.map((entry, i) => (
+                  <li key={entry._key} className="flex gap-3">
+                    <span className="font-body text-xs text-warm-brown-light mt-0.5 flex-shrink-0">
+                      {i + 1}.
+                    </span>
+                    <span className="font-body text-sm text-warm-brown leading-relaxed">
+                      {entry.url ? (
+                        <a
+                          href={entry.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline hover:text-forest-green transition-colors"
+                        >
+                          {entry.citation}
+                        </a>
+                      ) : (
+                        entry.citation
+                      )}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+
           <div className="mt-16 pt-10 border-t border-sage-green/20">
             <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-2">
               Written by

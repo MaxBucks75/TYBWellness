@@ -202,6 +202,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── TESTIMONIALS ─────────────────────────────────── */}
       {/* ── 3 PILLARS OF SERVICE ─────────────────────────── */}
       <section className="section-padding bg-cream">
         <div className="container-narrow">

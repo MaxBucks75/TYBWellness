@@ -38,6 +38,42 @@ export const postSchema = defineType({
       options: { hotspot: true },
     }),
     defineField({
+      name: "bibliography",
+      title: "Bibliography / References",
+      type: "array",
+      description:
+        "Optional — add sources, citations, or further reading. Each entry can include a citation and an optional link.",
+      of: [
+        {
+          type: "object",
+          name: "bibliographyEntry",
+          fields: [
+            {
+              name: "citation",
+              title: "Citation",
+              type: "text",
+              rows: 2,
+              description:
+                "The full citation text, e.g. author, title, publication, year.",
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: "url",
+              title: "Link (optional)",
+              type: "url",
+              description: "Link to the source online, if available.",
+            },
+          ],
+          preview: {
+            select: { title: "citation" },
+            prepare({ title }: { title?: string }) {
+              return { title: title ?? "Untitled reference" };
+            },
+          },
+        },
+      ],
+    }),
+    defineField({
       name: "body",
       title: "Body",
       type: "array",

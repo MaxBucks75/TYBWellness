@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
     if (!token || !endpointId) {
       console.error("Missing SPRUCE_API_TOKEN or SPRUCE_INTERNAL_ENDPOINT_ID");
       return NextResponse.json(
-        { error: "Server configuration is incomplete. Please call the office directly at (440) 292-6231." },
+        { error: "Server configuration is incomplete. Please call the office directly at (440) 472-1237." },
         { status: 500 }
       );
     }
@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
     if (!searchRes.ok) {
       console.error("Spruce search error:", searchRes.status, await searchRes.text());
       return NextResponse.json(
-        { error: "Something went wrong. Please try again or call us at (440) 292-6231." },
+        { error: "Something went wrong. Please try again or call us at (440) 472-1237." },
         { status: 500 }
       );
     }
@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         {
           error:
-            "We already have an inquiry on file from this phone number. Amber will be in touch — if it's urgent, please call (440) 292-6231.",
+            "We already have an inquiry on file from this phone number. Amber will be in touch — if it's urgent, please call (440) 472-1237.",
         },
         { status: 409 }
       );
@@ -114,7 +114,7 @@ export async function POST(req: NextRequest) {
     if (!createRes.ok) {
       console.error("Spruce create contact error:", createRes.status, await createRes.text());
       return NextResponse.json(
-        { error: "Something went wrong. Please try again or call us at (440) 292-6231." },
+        { error: "Something went wrong. Please try again or call us at (440) 472-1237." },
         { status: 500 }
       );
     }
@@ -147,7 +147,7 @@ export async function POST(req: NextRequest) {
     }
 
     // ── Step 4: Send SMS confirmation ────────────────────────
-    const messageBody = `Hi ${firstName.trim()}, thank you for contacting Train Your Brain Wellness. Amber Bucks, PMHNP-BC, will review your inquiry and follow up with you as soon as possible. If your situation is urgent, please call the office at (440) 292-6231 or dial 988 for the Suicide & Crisis Lifeline.`;
+    const messageBody = `Hi ${firstName.trim()}, thank you for contacting Train Your Brain Wellness. Amber Bucks, PMHNP-BC, will review your inquiry and follow up with you as soon as possible. If your situation is urgent, please call the office at (440) 472-1237 or dial 988 for the Suicide & Crisis Lifeline.`;
 
     const msgRes = await fetch(
       `${SPRUCE_BASE}/v1/internalendpoints/${endpointId}/conversations`,
@@ -173,7 +173,7 @@ export async function POST(req: NextRequest) {
   } catch (error) {
     console.error("Contact form submission error:", error);
     return NextResponse.json(
-      { error: "Something went wrong. Please try again or call us at (440) 292-6231." },
+      { error: "Something went wrong. Please try again or call us at (440) 472-1237." },
       { status: 500 }
     );
   }

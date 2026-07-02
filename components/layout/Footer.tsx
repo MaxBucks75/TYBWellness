@@ -35,6 +35,7 @@ export default function Footer() {
                 { label: "Services", href: "/services" },
                 { label: "Wellness Shop", href: "/store" },
                 { label: "Blog", href: "/blog" },
+                { label: "Testimonials", href: "/testimonials" },
                 { label: "Resources", href: "/resources" },
                 { label: "Fees & Policies", href: "/fees-policies" },
               ].map((link) => (
@@ -116,10 +117,10 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-sage-green mt-0.5 shrink-0" />
                 <a
-                  href="tel:+14402926231"
+                  href="tel:+14404721237"
                   className="font-body text-sm text-cream/70 hover:text-cream transition-colors"
                 >
-                  (440) 292-6231
+                  (440) 472-1237
                 </a>
               </li>
               <li className="flex items-start gap-3">

@@ -24,6 +24,7 @@ const navLinks = [
   { label: "Getting Started", href: "/getting-started" },
   { label: "Wellness Shop", href: "/store" },
   { label: "Blog", href: "/blog" },
+  { label: "Testimonials", href: "/testimonials" },
   { label: "Resources", href: "/resources" },
   { label: "Fees & Policies", href: "/fees-policies" },
 ];
@@ -53,10 +54,10 @@ export default function Header() {
           : "bg-deep-green"
       )}
     >
-      <div className="container-wide px-6 md:px-12">
+      <div className="container-wide px-4 md:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo / Brand */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-1 group">
             <Image
               src="/logo.png"
               alt="Train Your Brain Wellness"
