@@ -16,7 +16,7 @@ const navLinks = [
     href: "/services",
     children: [
       { label: "Psychiatric Care", href: "/services/psychiatric-care" },
-      { label: "First Responder & Healthcare Professional Wellness", href: "/services/first-responder-wellness" },
+      { label: "The Shift End Access Pass", href: "/services/first-responder-wellness" },
       { label: "Advanced Treatment & Recovery", href: "/services/advanced-treatment" },
       { label: "View All Services", href: "/services" },
     ],
@@ -57,7 +57,7 @@ export default function Header() {
       <div className="container-wide px-4 md:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo / Brand */}
-          <Link href="/" className="flex items-center gap-1 group">
+          <Link href="/" className="flex items-center gap-2 group">
             <Image
               src="/logo.png"
               alt="Train Your Brain Wellness"

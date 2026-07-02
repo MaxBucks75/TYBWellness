@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-deep-green text-cream">
+    <footer className="relative bg-deep-green text-cream">
       <div className="container-wide px-6 md:px-12 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand column */}
@@ -59,7 +59,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               {[
                 { label: "Comprehensive Psychiatric Care", href: "/services/psychiatric-care" },
-                { label: "First Responder & Healthcare Professional Wellness", href: "/services/first-responder-wellness" },
+                { label: "The Shift End Access Pass", href: "/services/first-responder-wellness" },
                 { label: "Advanced Treatment & Recovery", href: "/services/advanced-treatment" },
                 { label: "View All Services", href: "/services" },
               ].map((link) => (

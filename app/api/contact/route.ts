@@ -72,16 +72,12 @@ export async function POST(req: NextRequest) {
     const existingContacts: Array<{ phoneNumbers?: Array<{ value?: string }> }> =
       searchData.contacts ?? searchData.data ?? [];
 
-    console.log("Spruce search raw:", JSON.stringify(searchData));
-
     const normalizePhone = (p: string) => p.replace(/\D/g, "").slice(-10);
     const isDuplicate = existingContacts.some((c) =>
       c.phoneNumbers?.some(
         (p) => normalizePhone(p.value ?? "") === normalizePhone(phone.trim())
       )
     );
-
-    console.log("isDuplicate:", isDuplicate, "| contacts found:", existingContacts.length);
 
     if (isDuplicate) {
       return NextResponse.json(

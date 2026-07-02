@@ -4,23 +4,21 @@ import Image from "next/image";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "First Responder & Healthcare Professional Wellness",
+  title: "The Shift End Access Pass",
   description:
-    "A specialized mental health program for first responders, veterans, healthcare professionals, and their families at Train Your Brain Wellness.",
+    "The Shift End Access Pass — priority mental healthcare for first responders, healthcare professionals, veterans, and shift workers at Train Your Brain Wellness.",
 };
 
-const understandsList = [
-  "Use humor to cope with difficult experiences",
-  "Compartmentalize emotions to complete the job",
-  "Minimize symptoms because others appear to have experienced something worse",
-  "Fear being perceived as weak, unreliable, or unable to perform",
-  "Worry that asking for help could affect their reputation or career",
-  "Struggle to explain the cumulative effect of repeated exposure to death, injury, violence, grief, and human suffering",
-  "Function effectively at work while relationships, sleep, mood, or home life begin to deteriorate",
-  "Experience burnout, compassion fatigue, moral distress, or secondary traumatic stress without immediately recognizing it",
+const eligibleBenefits = [
+  "Priority scheduling whenever possible",
+  "Reserved Shift End appointment availability, including select evening and weekend appointments",
+  "Consideration for expedited appointments following significant work-related critical incidents, based on clinical urgency and provider availability",
+  "Personalized care coordination upon your request and with your written authorization",
+  "Priority processing of clinically appropriate forms, documentation, and medication refill requests",
+  "Secure HIPAA-compliant communication for non-urgent clinical needs",
 ];
 
-const programIncludes = [
+const clinicalServices = [
   "Comprehensive psychiatric evaluation",
   "Medication management",
   "Individual psychotherapy",
@@ -33,61 +31,97 @@ const programIncludes = [
   "Functional and integrative psychiatric care",
   "Coordination with other providers or peer-support programs when authorized",
   "Referrals for TMS, psychotherapy, and additional wellness or recovery services when clinically appropriate",
-  "Priority access for eligible spouses, partners, and immediate family members",
 ];
 
-export default function FirstResponderWellnessPage() {
+const understandsList = [
+  "Use humor to cope with difficult experiences",
+  "Compartmentalize emotions to complete the job",
+  "Minimize symptoms because others appear to have experienced something worse",
+  "Fear being perceived as weak, unreliable, or unable to perform",
+  "Worry that asking for help could affect their reputation or career",
+  "Struggle to explain the cumulative effect of repeated exposure to death, injury, violence, grief, and human suffering",
+  "Function effectively at work while relationships, sleep, mood, or home life begin to deteriorate",
+  "Experience burnout, compassion fatigue, moral distress, or secondary traumatic stress without immediately recognizing it",
+];
+
+export default function ShiftEndAccessPassPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-12 bg-deep-green">
-        <div className="container-narrow px-6 md:px-12">
-          <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-3">
-            A Pillar of Service
+      {/* ── HERO ─────────────────────────────────────────── */}
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+        <Image
+          src="/firstresponders-with-flag.png"
+          alt="First responders"
+          fill
+          priority
+          className="object-cover object-center -z-10"
+        />
+        <div className="absolute inset-0 bg-deep-green/55 -z-10" />
+        <div className="container-narrow px-6 md:px-12 relative z-10 py-24">
+          <p className="font-display italic text-xl text-cream mb-6 max-w-2xl leading-relaxed">
+            &ldquo;Sometimes the bravest thing you&rsquo;ll ever do isn&rsquo;t answering the call&mdash;it&rsquo;s answering your own.&rdquo;
           </p>
-          <h1 className="font-display text-4xl md:text-5xl text-cream font-light leading-tight">
-            First Responder & Healthcare Professional Wellness
+          <p className="font-body text-xs uppercase tracking-widest text-cream mb-4">
+            A Signature Program
+          </p>
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-cream-light font-light leading-[1.05] mb-6">
+            The Shift End<br />
+            <span className="italic text-cream">Access Pass</span>
           </h1>
         </div>
       </section>
 
-      {/* Emphasis tile — "How are you at home when your shift ends?" */}
-      <section className="py-14 bg-cream-light">
+      {/* ── WHAT IS IT ───────────────────────────────────── */}
+      <section className="section-padding bg-cream-light">
         <div className="container-narrow px-6 md:px-12">
-          <div className="bg-deep-green rounded-2xl p-8 md:p-12 max-w-3xl">
-            <h2 className="font-display text-3xl md:text-4xl text-cream font-light leading-tight mb-8">
-              How are you at home
-              <span className="block italic text-sage-green">
-                when your shift ends?
-              </span>
-            </h2>
-            <p className="font-body text-cream/80 text-lg leading-relaxed mb-4">
-              You may be able to complete the call, finish the shift, care for
-              the patient, and continue doing what everyone expects of you.
-            </p>
-            <p className="font-body text-cream/80 text-lg leading-relaxed mb-4">
-              But what happens when you go home?
-            </p>
-            <p className="font-body text-cream/80 text-lg leading-relaxed">
-              Are you able to be emotionally present with the people you love?
-              Are you sleeping? Are you increasingly irritable, detached,
-              anxious, exhausted, or unable to shut your mind off? Do you feel
-              as though your family receives whatever is left of you after the
-              job has taken everything else?
-            </p>
-            <p className="font-display italic text-2xl text-sage-green mt-8">
-              The effects of frontline work do not always end when the shift
-              does.
-            </p>
+          <div className="grid md:grid-cols-2 gap-14 items-center">
+            <div>
+              <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-4">
+                The Shift End Access Pass™
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl text-deep-green font-light leading-tight mb-6">
+                Your shift ends.<br />
+                <span className="italic text-forest-green">What comes home with you doesn&rsquo;t have to.</span>
+              </h2>
+              <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
+                At Train Your Brain Wellness, we understand that healing doesn&rsquo;t always fit within traditional office hours.
+              </p>
+              <p className="font-body text-warm-brown text-base leading-relaxed">
+                The Shift End Access Pass is our commitment to making mental
+                healthcare more accessible for first responders, healthcare
+                professionals, veterans, and other dedicated professionals whose
+                demanding schedules often require them to place everyone else before
+                themselves.
+              </p>
+            </div>
+            <div className="aspect-5/4 rounded-2xl overflow-hidden relative">
+              <Image
+                src="/how-are-you-when-the-shift-ends.png"
+                alt="How are you when your shift ends?"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Understanding */}
+      {/* ── CARE FROM SOMEONE WHO UNDERSTANDS ────────────── */}
       <section className="section-padding bg-cream">
-        <div className="container-narrow px-6 md:px-12">
+        <div className="container-narrow px-6 md:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-start">
-            {/* Text */}
+            {/* Left: sticky headshot + "I understand" label */}
+            <div className="md:top-28">
+              <div className="aspect-3/4 rounded-2xl overflow-hidden relative">
+                <Image
+                  src="/headshot-2.PNG"
+                  alt="Amber Bucks, MSN, APRN, PMHNP-BC"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            {/* Right: heading, paragraphs, list, quote */}
             <div>
               <h2 className="font-display text-3xl md:text-4xl text-deep-green mb-6">
                 Care From Someone Who Understands the Work Behind the Symptoms
@@ -103,37 +137,23 @@ export default function FirstResponderWellnessPage() {
                 well-intentioned but unfamiliar with the culture of emergency
                 services and healthcare. When a professional has to spend most of
                 the appointment explaining the job, defending their reactions, or
-                trying to make someone understand why a particular call or
-                patient continues to affect them, it can become difficult to
-                build trust.
+                trying to make someone understand why a particular call or patient
+                continues to affect them, it can become difficult to build trust.
               </p>
-              <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
-                This program is designed to offer something more individualized
-                and clinically comprehensive.
+              <p className="font-body text-warm-brown text-base leading-relaxed mb-8">
+                My background includes years of experience in emergency and trauma
+                nursing, psychiatric emergency care, crisis intervention, acute
+                mental health treatment, and direct work with first responders,
+                veterans, healthcare professionals, and individuals experiencing
+                some of the most difficult moments of their lives.
               </p>
-              <p className="font-body text-warm-brown text-base leading-relaxed mb-10">
-                My background includes years of experience in emergency and
-                trauma nursing, psychiatric emergency care, crisis intervention,
-                acute mental health treatment, and direct work with first
-                responders, Veterans, healthcare professionals, and individuals
-                experiencing some of the most difficult moments of their lives.
-              </p>
-            </div>
-            {/* Headshot — sticky so it stays alongside the long text block */}
-            <div className="md:top-28 aspect-3/4 rounded-2xl overflow-hidden relative">
-              <Image
-                src="/headshot-2.PNG"
-                alt="Amber Bucks, MSN, APRN, PMHNP-BC"
-                fill
-                className="object-cover"
-              />
             </div>
           </div>
-          <div>
-              <h3 className="font-display text-2xl text-deep-green mb-6">
-                I understand that frontline professionals may:
-              </h3>
-              <div className="flex flex-col gap-4 mb-10">
+          <div className="mt-6">
+                <h3 className="font-display text-3xl text-deep-green pb-6">
+                  I understand that frontline professionals may:
+                </h3>
+                <div className="flex flex-col gap-4 mb-8">
                 {understandsList.map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-forest-green flex-shrink-0 mt-0.5" />
@@ -143,35 +163,47 @@ export default function FirstResponderWellnessPage() {
                   </div>
                 ))}
               </div>
-
               <p className="font-display italic text-2xl text-forest-green leading-relaxed">
                 You should not have to translate your profession before you can
                 begin talking about what it is doing to you.
               </p>
-            </div>
+          </div>
         </div>
       </section>
 
-      {/* More than EAP */}
+      {/* ── ELIGIBLE BENEFITS ────────────────────────────── */}
+      <section className="section-padding bg-cream-light">
+        <div className="container-narrow px-6 md:px-12">
+          <h2 className="font-display text-3xl md:text-4xl text-deep-green mb-8">
+            Eligible Patients Receive
+          </h2>
+          <div className="flex flex-col gap-5 max-w-3xl">
+            {eligibleBenefits.map((item) => (
+              <div key={item} className="flex items-start gap-4">
+                <CheckCircle className="w-5 h-5 text-forest-green flex-shrink-0 mt-0.5" />
+                <span className="font-body text-base text-warm-brown leading-relaxed">
+                  {item}
+              </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CLINICAL SERVICES ────────────────────────────── */}
       <section className="section-padding bg-cream-light">
         <div className="container-narrow px-6 md:px-12 max-w-3xl">
-          <h2 className="font-display text-3xl md:text-4xl text-deep-green mb-6">
-            More Than a Brief Workplace Benefit
+          <h2 className="font-display text-3xl md:text-4xl text-deep-green mb-3">
+            Clinical Services
           </h2>
-          <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
-            Employee assistance programs can serve an important role by
-            offering an initial point of contact and connecting employees
-            with available resources. However, some first responders and
-            healthcare professionals need more than a limited number of
-            general counseling sessions or a one-time referral.
-          </p>
           <p className="font-body text-warm-brown text-base leading-relaxed mb-8">
-            The Frontline Mental Wellness Program provides access to ongoing,
-            confidential clinical care that may include:
+            Psychiatric evaluations, medication management, psychotherapy, and
+            all other clinical services are billed separately through insurance
+            or self-pay according to the current practice fee schedule. The
+            Shift End Access Pass may include:
           </p>
-
           <div className="grid sm:grid-cols-2 gap-4 mb-8">
-            {programIncludes.map((item) => (
+            {clinicalServices.map((item) => (
               <div key={item} className="flex items-start gap-3">
                 <CheckCircle className="w-4 h-4 text-forest-green flex-shrink-0 mt-1" />
                 <span className="font-body text-sm text-warm-brown leading-relaxed">
@@ -180,56 +212,73 @@ export default function FirstResponderWellnessPage() {
               </div>
             ))}
           </div>
-
           <p className="font-body text-warm-brown text-sm leading-relaxed italic">
-            This program is not intended to replace every EAP, peer-support
-            team, or workplace wellness service. It is designed to provide the
-            specialized clinical care, continuity, and understanding that may
+            Clinical services are provided based on individual need and clinical
+            appropriateness. This program is not intended to replace every EAP,
+            peer-support team, or workplace wellness service — it is designed to
+            provide the specialized care, continuity, and understanding that may
             be needed when brief support is not enough.
           </p>
         </div>
       </section>
 
-      {/* You don't have to wait */}
+      
+
+      
+
+      {/* ── PROFESSIONAL APPRECIATION COURTESY ───────────── */}
       <section className="section-padding bg-cream-light">
         <div className="container-narrow px-6 md:px-12">
-          <div className="bg-deep-green rounded-2xl p-8 md:p-12 max-w-3xl">
-            <h2 className="font-display text-3xl md:text-4xl text-cream mb-8">
-              You Do Not Have to Wait Until You Are in Crisis
-            </h2>
-            <div className="flex flex-col gap-4 font-body text-cream/80 text-base leading-relaxed mb-8">
-              <p>Mental health care is not only for the person who can no longer work.</p>
-              <p>It is also for the firefighter who is becoming increasingly distant at home.</p>
-              <p>The paramedic who cannot stop replaying a call.</p>
-              <p>The dispatcher who continues hearing the voices from the other end of the line.</p>
-              <p>The police officer who is constantly on alert, even while sitting safely at home.</p>
-              <p>The nurse who has lost compassion and feels guilty about it.</p>
-              <p>
-                The healthcare professional who dreads returning to work but
-                does not know who they would be if they left.
+          <div className="grid md:grid-cols-2 gap-14 items-center">
+            <div>
+              <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-4">
+                Professional Appreciation Courtesy
               </p>
-              <p>The spouse or partner who sees the changes but does not know how to help.</p>
+              <h2 className="font-display text-3xl md:text-4xl text-forest-green font-light leading-tight mb-6">
+                A thank you for your service.
+            </h2>
+              <p className="font-body text-warm-brown text-base leading-relaxed mb-5">
+                As a small expression of gratitude, eligible self-pay first
+                responders, healthcare professionals, active military members,
+                veterans, and their immediate family members receive a{" "}
+                <span className="text-sage-green font-semibold">
+                  10% Professional Appreciation Courtesy
+                </span>{" "}
+                on self-pay clinical services.
+              </p>
+              <p className="font-body text-warm-brown text-base leading-relaxed mb-8">
+                Because caring for those who care for others isn&rsquo;t just
+                part of what we do &mdash; it&rsquo;s part of who we are.
+              </p>
+              <p className="font-display italic text-xl text-warm-brown leading-relaxed">
+                &ldquo;From Survival to Healing&rdquo;<br />
+                <span className="font-body not-italic text-sm text-warm-brown/90 mt-1 block">
+                  — Amber Bucks, PMHNP-BC
+                </span>
+              </p>
             </div>
-            <p className="font-body text-cream/90 text-lg leading-relaxed mb-2">
-              You have spent your career taking care of others. You deserve care
-              from someone who understands that the goal is not simply to help
-              you survive another shift.
-            </p>
-            <p className="font-display italic text-2xl text-sage-green mt-6">
-              The goal is to help you return home as yourself.
-            </p>
+            {/* Firefighter headshot */}
+            <div className="aspect-3/4 rounded-2xl overflow-hidden relative">
+              <Image
+                src="/firefighter-headshot.jpg"
+                alt="A first responder"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ──────────────────────────────────────────── */}
       <section className="section-padding bg-cream">
         <div className="container-narrow px-6 md:px-12 text-center">
           <h2 className="font-display text-3xl md:text-4xl text-deep-green mb-3">
-            How are you at home when your shift ends?
+            The people waiting at home deserve the healthiest version of you.
           </h2>
           <p className="font-body text-warm-brown text-base max-w-xl mx-auto mb-8 leading-relaxed">
-            Reach out and Amber will follow up with you as soon as possible.
+            And so do you. Reach out and Amber will follow up with you as soon
+            as possible.
           </p>
           <Link
             href="/getting-started#contact"

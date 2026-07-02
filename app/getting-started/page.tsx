@@ -96,11 +96,11 @@ export default function GettingStartedPage() {
               return (
                 <div key={step.title} className="flex gap-8 items-start">
                   <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 rounded-full bg-forest-green flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-forest-green flex items-center justify-center shrink-0">
                       <Icon className="w-5 h-5 text-cream" />
                     </div>
                     {i < steps.length - 1 && (
-                      <div className="w-px flex-1 bg-forest-green/20 mt-4 min-h-[3rem]" />
+                      <div className="w-px flex-1 bg-forest-green/20 mt-4 min-h-12" />
                     )}
                   </div>
                   <div className="pb-2">

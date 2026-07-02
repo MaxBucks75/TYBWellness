@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 
 const jumpLinks = [
   { label: "Psychiatric Care", href: "#psychiatric-care" },
-  { label: "First Responder Wellness", href: "#first-responder" },
+  { label: "Shift End Access Pass", href: "#first-responder" },
   { label: "Advanced Treatment", href: "#advanced-treatment" },
   { label: "What We Specialize In", href: "#specialize" },
   { label: "Additional Services", href: "#additional-services" },
@@ -303,13 +303,13 @@ export default function ServicesPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          PILLAR 2: First Responder & Healthcare Wellness — sage-green, dark text
+          PILLAR 2: The Shift End Access Pass
       ══════════════════════════════════════════════════ */}
       <section id="first-responder" className="py-20 bg-forest-green/85">
         <div className="container-narrow px-6 md:px-12">
           <div className="text-center mb-4">
             <h2 className="font-display text-4xl md:text-5xl text-cream">
-              First Responder & Healthcare Professional Wellness
+              The Shift End Access Pass
             </h2>
           </div>
           <div className="text-center mb-14">
@@ -407,7 +407,7 @@ export default function ServicesPage() {
               <div className="flex flex-col gap-4 mb-10">
                 {understandsList.map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-cream flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-cream shrink-0 mt-0.5" />
                     <span className="font-body text-base text-cream leading-relaxed">
                       {item}
                     </span>
@@ -427,14 +427,14 @@ export default function ServicesPage() {
                 general counseling sessions or a one-time referral.
               </p>
               <p className="font-body text-cream text-base leading-relaxed mb-8">
-                The Frontline Mental Wellness Program provides access to
+                The Shift End Access Pass provides access to
                 ongoing, confidential clinical care that may include:
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4 mb-8">
                 {programIncludes.map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckCircle className="w-4 h-4 text-cream flex-shrink-0 mt-1" />
+                    <CheckCircle className="w-4 h-4 text-cream shrink-0 mt-1" />
                     <span className="font-body text-sm text-cream/80 leading-relaxed">
                       {item}
                     </span>
@@ -525,7 +525,7 @@ export default function ServicesPage() {
               <div className="grid sm:grid-cols-2 gap-3">
                 {tmsBenefits.map((b) => (
                   <div key={b} className="flex items-start gap-2.5">
-                    <CheckCircle className="w-4 h-4 text-deep-green flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-deep-green shrink-0 mt-0.5" />
                     <span className="font-body text-sm text-deep-green/80 leading-relaxed">{b}</span>
                   </div>
                 ))}
@@ -553,7 +553,7 @@ export default function ServicesPage() {
                       href={partner.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-deep-green/60 rounded-lg p-3 inline-flex items-center justify-center flex-shrink-0"
+                      className="bg-deep-green/60 rounded-lg p-3 inline-flex items-center justify-center shrink-0"
                     >
                       <Image
                         src={partner.logo}
@@ -624,7 +624,7 @@ export default function ServicesPage() {
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {specialties.map((s) => (
               <div key={s} className="flex items-start gap-3">
-                <CheckCircle className="w-4 h-4 text-forest-green flex-shrink-0 mt-1" />
+                <CheckCircle className="w-4 h-4 text-forest-green shrink-0 mt-1" />
                 <span className="font-body text-base text-warm-brown leading-relaxed">{s}</span>
               </div>
             ))}
@@ -645,7 +645,7 @@ export default function ServicesPage() {
           <div className="grid sm:grid-cols-2 gap-3 mb-8 max-w-2xl mx-auto">
             {additionalServices.map((item) => (
               <div key={item} className="flex items-start gap-2.5">
-                <CheckCircle className="w-3.5 h-3.5 text-forest-green flex-shrink-0 mt-1" />
+                <CheckCircle className="w-3.5 h-3.5 text-forest-green shrink-0 mt-1" />
                 <span className="font-body text-sm text-warm-brown leading-relaxed">{item}</span>
               </div>
             ))}

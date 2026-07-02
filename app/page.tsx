@@ -12,9 +12,9 @@ const pillars = [
   },
   {
     icon: Shield,
-    title: "First Responder & Healthcare Professional Wellness",
+    title: "The Shift End Access Pass",
     description:
-      "Specialized, confidential care for police, fire, EMS, dispatchers, veterans, and healthcare workers — and the families who stand beside them.",
+      "Specialized, confidential care for first responders, veterans, and healthcare workers — with priority scheduling and support built around your shift, not the other way around.",
     href: "/services/first-responder-wellness",
   },
   {
@@ -202,9 +202,125 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ─────────────────────────────────── */}
+      {/* ── SHIFT END ACCESS PASS — HERO ─────────────────── */}
+      <section className="relative min-h-[75vh] flex items-center overflow-hidden">
+        <Image
+          src="/firstresponders-with-flag.png"
+          alt="First responders"
+          fill
+          className="object-cover object-center -z-10"
+        />
+        <div className="absolute inset-0 bg-deep-green/55 -z-10" />
+        <div className="container-narrow px-6 md:px-12 relative z-10 py-24">
+          <p className="font-body text-xs uppercase tracking-widest text-cream mb-4">
+            A Signature Program
+          </p>
+          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl text-cream-light font-light leading-[1.05] mb-6">
+            The Shift End<br />
+            <span className="italic text-cream">Access Pass</span>
+          </h2>
+          <p className="font-body text-cream-light/90 text-xl md:text-2xl max-w-xl leading-relaxed mb-8">
+            Because the Ones Who Save Lives Need Support Too.
+          </p>
+          <p className="font-display italic text-2xl text-cream">
+            Not everyone works Monday through Friday.<br />
+            Neither do we.
+          </p>
+        </div>
+      </section>
+
+      {/* ── SHIFT END ACCESS PASS — MISSION ──────────────── */}
+      <section className="section-padding bg-deep-green">
+        <div className="container-narrow px-6 md:px-12">
+          <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-3">
+            Why This Mission Matters
+          </p>
+          <div className="grid md:grid-cols-2 gap-14 items-start mt-8">
+            {/* Text */}
+            <div>
+              <h3 className="font-display text-3xl md:text-4xl text-cream font-light leading-tight mb-6">
+                How are you at home
+                <span className="block italic text-sage-green">when your shift ends?</span>
+              </h3>
+              <p className="font-body text-cream/80 text-base leading-relaxed mb-5">
+                Your shift eventually ends. What comes home with you doesn&rsquo;t have to.
+              </p>
+              <p className="font-body text-cream/80 text-base leading-relaxed mb-5">
+                At Train Your Brain Wellness, we believe healing extends far
+                beyond symptom management. It&rsquo;s about helping people
+                reclaim their lives, strengthen their relationships, and return
+                home with the emotional health, resilience, and presence to be
+                the spouse, parent, partner, family member, and friend they want
+                to be. From Survival to Healing.
+              </p>
+            </div>
+            {/* Image */}
+            <div className="aspect-square rounded-2xl overflow-hidden relative">
+              <Image
+                src="/tyb-flag.jpg"
+                alt="How are you when your shift ends?"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Personal mission */}
+          <div className="mt-14 max-w-3xl">
+            <h3 className="font-display text-3xl md:text-4xl text-cream font-light leading-tight mb-6">
+                This Mission is deeply personal to me.
+              </h3>
+            <p className="font-body text-cream/80 text-base leading-relaxed mb-5">
+              Having grown up in a family of first responders and spending my
+              career in healthcare, I&rsquo;ve witnessed the extraordinary
+              sacrifices made by those who dedicate their lives to caring for
+              and protecting others. I&rsquo;ve also experienced the
+              heartbreaking loss of respected colleagues whose lives were
+              impacted by trauma, burnout, and mental health struggles. Those
+              experiences shaped not only my career &mdash; they shaped my purpose.
+            </p>
+            <p className="font-body text-cream/80 text-base leading-relaxed mb-5">
+              Train Your Brain Wellness was created to provide compassionate,
+              evidence-based psychiatric care for individuals from all walks of
+              life while maintaining a special commitment to first responders,
+              corrections, healthcare professionals, veterans, shift workers,
+              and the families who support them.
+            </p>
+            <p className="font-body text-cream/80 text-base leading-relaxed mb-10">
+              As a small expression of gratitude, we proudly offer a{" "}
+              <span className="text-sage-green font-medium">
+                10% Professional Appreciation Courtesy
+              </span>{" "}
+              on cash-pay clinical services for first responders, healthcare
+              professionals, active military, veterans, and their immediate
+              family members.
+            </p>
+            <p className="font-body text-cream/80 text-base leading-relaxed mb-10">
+              For those seeking enhanced flexibility, priority scheduling, and care designed around the realities of shift work, we invite you to explore our signature program:<br>
+              </br>The Shift End Access Pass.
+            </p>
+            <p className="font-display italic text-xl text-cream leading-relaxed mb-8">
+                <b>Because the people waiting at home deserve the healthiest version of you &mdash; and so do you.</b>
+            </p>
+            <Link
+              href="/services/first-responder-wellness"
+              className="inline-flex items-center gap-2 bg-sage-green hover:bg-cream text-deep-green font-body font-medium px-8 py-4 rounded-full transition-all duration-200"
+            >
+              Explore the Shift End Access Pass™ <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── 3 PILLARS OF SERVICE ─────────────────────────── */}
-      <section className="section-padding bg-cream">
+      <section className="relative section-padding overflow-hidden">
+        <Image
+          src="/neuron-scan.jpg"
+          alt=""
+          fill
+          className="object-cover object-center -z-10"
+        />
+        <div className="absolute inset-0 bg-cream/85 -z-10" />
         <div className="container-narrow">
           <div className="text-center mb-14">
             <p className="font-body text-xs uppercase tracking-widest text-sage-green mb-3">
